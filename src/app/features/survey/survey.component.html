@@ -25,21 +25,22 @@
                 <div class="card card-body">
                     <h2>Main Menu</h2>
                     <sql-menu (menuClick)="processClick($event);" [active]="'GENERAL'">
-                        <li #row id="GENERAL">General Description</li>
-                        <li #row id="POPULATION">Student Population</li>
-                        <li #row id="PERIMETER">Perimeter Security</li>
-                        <li #row id="APPROACH">Approach and Parking</li>
-                        <li #row id="OUTDOOR">Outdoor Areas</li>
-                        <li #row id="ENVELOPE">Building Envelope</li>
-                        <li #row id="ENTRYCONTROL">Entry Controls</li>
-                        <li #row id="SRP">Security / Response Planning</li>
-                        <li #row id="RESPONSE">Emergency Response</li>
-                        <li #row id="STAFFING">Security Force & Staffing</li>
-                        <li #row id="INCIDENTS">Incident History</li>
-                        <li #row id="THREAT">Likely Threats</li>
-                        <li #row id="ESS">Electronic Security Systems</li>
-                        <li #row id="CYBER">Cyber Security</li>
-                        <li #row id="UTILITIES">Utility Dependencies</li>
+                        <li #row id="GENERAL-10">General Description</li>
+                        <li #row id="POPULATION-20">Student Population</li>
+                        <li #row id="TRANSPORTATION-30">Student Transportation</li>
+                        <li #row id="PERIMETER-40">Perimeter Security</li>
+                        <li #row id="APPROACH-50">Approach and Parking</li>
+                        <li #row id="OUTDOOR-60">Outdoor Areas</li>
+                        <li #row id="ENVELOPE-70">Building Envelope</li>
+                        <li #row id="ENTRYCONTROL-80">Entry Controls</li>
+                        <li #row id="SRP-90">Security / Response Planning</li>
+                        <li #row id="RESPONSE-100">Emergency Response</li>
+                        <li #row id="STAFFING-110">Security Force & Staffing</li>
+                        <li #row id="INCIDENTS-120">Incident History</li>
+                        <li #row id="THREAT-130">Likely Threats</li>
+                        <li #row id="ESS-140">Electronic Security Systems</li>
+                        <li #row id="CYBER-150">Cyber Security</li>
+                        <li #row id="UTILITIES-160">Utility Dependencies</li>
                     </sql-menu>
                 </div>
             </div>
@@ -123,7 +124,8 @@
                     </div>
                         <!-- A1 -->
                         <div class="card card-body mt-2">
-                        <div class="row" style="margin-top:20px;">
+                                <app-section-panel [survey_id]="'10'" [section_id]="'10'"></app-section-panel>
+<!--                        <div class="row" style="margin-top:20px;">
                             <div class="col-7">
                                     <span style="font-size:20px;">Is the facility on a campus with other organzations or schools?</span>
                             </div>
@@ -272,9 +274,11 @@
                 </div>
             </div>
             </div>
-            </div>
+            </div> -->
 
 
+                    </div>
+                    </div>
                     </div>
                     </div>
                     <div *ngIf="this.population=='Y'" class="card p-3">
@@ -299,8 +303,16 @@
                                     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
                                   </div>                            
                         </div>
-                            <!-- A1 -->
+                        </div>
+                        </div>
+                        </div>
+                        <div *ngIf="this.transportation=='Y'" class="card p-3">
+                            <div class="row">
+                                <div class="col-11">
+                                    <h2>Student Transportation</h2>
                             <div class="card card-body mt-2">
+                                <app-section-panel [survey_id]="'10'" [section_id]="'30'"></app-section-panel>
+       <!--                     
                             <div class="row" style="margin-top:20px;">
                                 <div class="col-7">
                                         <span style="font-size:20px;">What modes of transportation are used to transport students to school?</span>
@@ -525,18 +537,17 @@
                                         </label>
                                       </div>
                                 </div>
-                            </div>
+                            </div> -->
                 </div>
                 </div>
-    
-    
-                        </div>
-                        </div>
+                </div>
+                </div>
                 <div *ngIf="this.perimeter=='Y'" class="card p-3" style="height: 500px">
                     <div class="row">
                         <div class="col-9">
                             <h2>Perimeter Security</h2>
                         </div>
+                        <app-section-panel [survey_id]="'10'" [section_id]="'40'"></app-section-panel>
                     </div>
                 </div>                
                 <div *ngIf="this.approach=='Y'" class="card p-3" style="height: 500px">
@@ -545,6 +556,7 @@
                             <h2>Approach and Parking</h2>
                         </div>
                     </div>
+                    <app-section-panel [survey_id]="'10'" [section_id]="'50'"></app-section-panel>
                 </div>                
                 <div *ngIf="this.outdoor=='Y'" class="card p-3" style="height: 500px">
                     <div class="row">
@@ -552,6 +564,7 @@
                             <h2>Outdoor Areas</h2>
                         </div>
                     </div>
+                    <app-section-panel [survey_id]="'10'" [section_id]="'60'"></app-section-panel>
                 </div>                
 
             <div *ngIf="this.envelope=='Y'" class="card p-3" style="height: 500px">
@@ -559,6 +572,7 @@
                     <div class="col-9">
                         <h2>Building Envelope</h2>
                     </div>
+                    <app-section-panel [survey_id]="'10'" [section_id]="'70'"></app-section-panel>
                 </div>
             </div>   
             <div *ngIf="this.entrycontrol=='Y'" class="card p-3" style="height: 500px">
@@ -566,20 +580,39 @@
                     <div class="col-9">
                         <h2>Entry Controls</h2>
                     </div>
+                    <app-section-panel [survey_id]="'10'" [section_id]="'80'"></app-section-panel>
                 </div>
-            </div>               
-            <div *ngIf="this.staffing=='Y'" class="card p-3" style="height: 500px">
+            </div>                
+            <div *ngIf="this.srp=='Y'" class="card p-3" style="height: 500px">
                 <div class="row">
                     <div class="col-9">
                         <h2>Security / Response Planning</h2>
                     </div>
+                    <app-section-panel [survey_id]="'10'" [section_id]="'90'"></app-section-panel>
                 </div>
             </div>   
+            <div *ngIf="this.response=='Y'" class="card p-3" style="height: 500px">
+                <div class="row">
+                    <div class="col-9">
+                        <h2>Emergency Response</h2>
+                    </div>
+                    <app-section-panel [survey_id]="'10'" [section_id]="'100'"></app-section-panel>
+                </div>
+            </div>   
+            <div *ngIf="this.staffing=='Y'" class="card p-3" style="height: 500px">
+                <div class="row">
+                    <div class="col-9">
+                        <h2>Security Force Staffing</h2>
+                    </div>
+                    <app-section-panel [survey_id]="'10'" [section_id]="'110'"></app-section-panel>
+                </div>
+            </div>  
             <div *ngIf="this.incidents=='Y'" class="card p-3" style="height: 500px">
                 <div class="row">
                     <div class="col-9">
                         <h2>Incident History</h2>
                     </div>
+                    <app-section-panel [survey_id]="'10'" [section_id]="'120'"></app-section-panel>
                 </div>
             </div>               
             <div *ngIf="this.threat=='Y'" class="card p-3" style="height: 500px">
@@ -587,6 +620,7 @@
                     <div class="col-9">
                         <h2>Likely Threats</h2>
                     </div>
+                    <app-section-panel [survey_id]="'10'" [section_id]="'130'"></app-section-panel>
                 </div>
             </div>   
             <div *ngIf="this.ess=='Y'" class="card p-3" style="height: 500px">
@@ -594,6 +628,7 @@
                     <div class="col-9">
                         <h2>Electronic Security Systems</h2>
                     </div>
+                    <app-section-panel [survey_id]="'10'" [section_id]="'140'"></app-section-panel>
                 </div>
             </div>               
             <div *ngIf="this.cyber=='Y'" class="card p-3" style="height: 500px">
@@ -601,6 +636,7 @@
                     <div class="col-9">
                         <h2>Cyber Security</h2>
                     </div>
+                    <app-section-panel [survey_id]="'10'" [section_id]="'150'"></app-section-panel>
                 </div>
             </div>   
             <div *ngIf="this.utilities=='Y'" class="card p-3" style="height: 500px">
@@ -608,6 +644,7 @@
                     <div class="col-9">
                         <h2>Utility Dependencies</h2>
                     </div>
+                    <app-section-panel [survey_id]="'10'" [section_id]="'160'"></app-section-panel>
                 </div>
             </div>               
             </div>

@@ -19,12 +19,14 @@ import { AddDocumentFormComponent } from 'src/app/components/add-document-form/a
 import { SqlUploadComponent } from 'src/app/components/sql-upload/sql-upload.component';
 import { SmartUploadComponent } from 'src/app/components/smart-upload/smart-upload.component';
 import { SitebarWrapperComponent } from 'src/app/template/sitebar-wrapper/sitebar-wrapper.component';
+import { SectionPanelComponent } from 'src/app/components/section-panel/section-panel.component';
 
 
 @Component({
   selector: 'app-survey',
   standalone: true,
-  imports: [CommonModule, Ng2SearchPipeModule, MatRadioModule, NgxTablePaginationModule, RouterModule, FormsModule, SqlUploadComponent, SmartUploadComponent,
+  imports: [CommonModule, Ng2SearchPipeModule, MatRadioModule, NgxTablePaginationModule, RouterModule, 
+    FormsModule, SqlUploadComponent, SmartUploadComponent, SectionPanelComponent,
     SqlComponentsModule, SqlMenuComponent, FileUploadModule, HttpClientModule, AddDocumentFormComponent, SitebarWrapperComponent],
   templateUrl: './survey.component.html',
   styleUrls: ['./survey.component.css']
@@ -79,21 +81,6 @@ export class SurveyComponent  {
   uid: any = 0;
   doc_id: any = 0;
 
-
-//  <li #row id="PERIMETER">Perimeter Security</li>
-  //<li #row id="APPROACH">Approach and Parking</li>
-//  <li #row id="OUTDOOR">Outdoor Areas</li>
-  //<li #row id="ENVELOPE">Building Envelope</li>
-//  <li #row id="ENTRYCONTROL">Entry Controls</li>
-  //<li #row id="SRP">Security / Response Planning</li>
-//  <li #row id="RESPONSE">Emergency Response</li>
-  //<li #row id="STAFFING">Security Force & Staffing</li>
-//  <li #row id="INCIDENTS">Incident History</li>
-  //<li #row id="THREAT">Likely Threats</li>
-//  <li #row id="ESS">Electronic Security Systems</li>
-  //<li #row id="CYBER">Cyber Security</li>
-//  <li #row id="UTILITIES">Utility Dependencies</li>
-
   a1: any = '';
   a2: any = '';
   a3: any = '';
@@ -104,7 +91,6 @@ export class SurveyComponent  {
   a8: any = '';
   a9: any = '';
   a10: any = '';
-
 
   general: any = 'Y';
   population: any = 'N';
@@ -121,6 +107,8 @@ export class SurveyComponent  {
   ess: any = 'N';
   cyber: any = 'N';
   utilities: any = 'N';
+  transportation: any = 'N';
+  emergency: any = 'N';
 
   b1: any;
   b2: any;
@@ -194,37 +182,40 @@ closeUpload() {
 
   processClick(m: any) {
 
-this.general='N'; 
-this.population='N'; 
-this.perimeter='N'; 
-this.approach='N'; 
-this.outdoor='N'; 
-this.envelope='N'; 
-this.entrycontrol='N'; 
-this.srp='N'; 
-this.response='N'; 
-this.staffing='N'; 
-this.incidents='N'; 
-this.threat='N'; 
-this.ess='N'; 
-this.cyber='N'; 
-this.utilities='N'; 
+    this.general='N'; 
+    this.population='N'; 
+    this.transportation='N'; 
+    this.perimeter='N'; 
+    this.approach='N'; 
+    this.outdoor='N'; 
+    this.envelope='N'; 
+    this.entrycontrol='N'; 
+    this.srp='N'; 
+    this.response='N'; 
+    this.staffing='N'; 
+    this.incidents='N'; 
+    this.threat='N'; 
+    this.ess='N'; 
+    this.cyber='N'; 
+    this.utilities='N'; 
+    this.emergency='N';
 
-  if (m.id=='GENERAL') { this.general='Y'; }
-  if (m.id=='POPULATION') { this.population='Y'; }
-  if (m.id=='PERIMETER') { this.perimeter='Y'; }
-  if (m.id=='APPROACH') { this.approach='Y'; }
-  if (m.id=='OUTDOOR') { this.outdoor='Y'; }
-  if (m.id=='ENVELOPE') { this.envelope='Y'; }
-  if (m.id=='ENTRYCONTROL') { this.entrycontrol='Y'; }
-  if (m.id=='SRP') { this.srp='Y'; }
-  if (m.id=='RESPONSE') { this.response='Y'; }
-  if (m.id=='STAFFING') { this.staffing='Y'; }
-  if (m.id=='INCIDENTS') { this.incidents='Y'; }
-  if (m.id=='THREAT') { this.threat='Y'; }
-  if (m.id=='ESS') { this.ess='Y'; }
-  if (m.id=='CYBER') { this.cyber='Y'; }
-  if (m.id=='UTILITIES') { this.utilities='Y'; }
+    if (m.id=='GENERAL-10') { this.general='Y'; }
+    if (m.id=='POPULATION-20') { this.population='Y'; }
+    if (m.id=='TRANSPORTATION-30') { this.transportation='Y'; }
+    if (m.id=='PERIMETER-40') { this.perimeter='Y'; }
+    if (m.id=='APPROACH-50') { this.approach='Y'; }
+    if (m.id=='OUTDOOR-60') { this.outdoor='Y'; }
+    if (m.id=='ENVELOPE-70') { this.envelope='Y'; }
+    if (m.id=='ENTRYCONTROL-80') { this.entrycontrol='Y'; }
+    if (m.id=='SRP-90') { this.srp='Y'; }
+    if (m.id=='RESPONSE-100') { this.response='Y'; }
+    if (m.id=='STAFFING-110') { this.staffing='Y'; }
+    if (m.id=='INCIDENTS-120') { this.incidents='Y'; }
+    if (m.id=='THREAT-130') { this.threat='Y'; }
+    if (m.id=='ESS-140') { this.ess='Y'; }
+    if (m.id=='CYBER-150') { this.cyber='Y'; }
+    if (m.id=='UTILITIES-160') { this.utilities='Y'; }
 
 
   }
