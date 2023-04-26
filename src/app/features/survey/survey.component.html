@@ -14,8 +14,8 @@
         <div class="row card card-body m-3">
             <div class="row">
                 <div class="col-6">
-                    <button class="btn btn-secondary" (click)="downloadZip()">Invite Team</button>
-                </div>            
+                    <button class="btn btn-secondary" (click)="toggleInviteT()">Invite Team</button>
+                </div>           
                 <div class="col-6" style="text-align: right;">
                 </div>
             </div>
@@ -56,7 +56,7 @@
                 <div *ngIf="inviting=='Y'" class="card p-3">
                     <div class="card">
                         <div class="card-header">
-                            <h2>Invite Collaborator</h2>
+                            <h2>Invite Team Member</h2>
                         </div>
                         <div class="card-body">
                             <div class="mb-3">
@@ -89,23 +89,449 @@
                         </div>
                     </div>
                 </div>         
-
-
-
-                <div *ngIf="this.general=='Y'" class="card p-3" style="height: 500px">
+                <div *ngIf="this.general=='Y'" class="card p-3">
                     <div class="row">
-                        <div class="col-9">
+                        <div class="col-11">
                             <h2>General Facility Description</h2>
+                            <div class="card card-body mt-2">
+                            <div class="mb-3" style="color: black">
+                                <label style="color: black" for="exampleFormControlInput1" class="form-label">School Name</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                              </div>
+                              <div class="mb-3">
+                                <label style="color: black" for="exampleFormControlInput1" class="form-label">Physical Address</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                              </div>
+                              <div class="mb-3">
+                                <label style="color: black" for="exampleFormControlInput1" class="form-label">Mailing Address</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                              </div>
+                              <div class="row">
+                                <div class="col-3">
+                                        <label style="color: black" for="exampleFormControlInput1" class="form-label">City</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                </div>
+                                <div class="col-3">
+                                    <label style="color: black" for="exampleFormControlInput1" class="form-label">State</label>
+                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                            </div>
+                            <div class="col-3">
+                                <label style="color: black" for="exampleFormControlInput1" class="form-label">Zip</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                            </div>
+                        </div>                              
+                    </div>
+                        <!-- A1 -->
+                        <div class="card card-body mt-2">
+                        <div class="row" style="margin-top:20px;">
+                            <div class="col-7">
+                                    <span style="font-size:20px;">Is the facility on a campus with other organzations or schools?</span>
+                            </div>
+                            <div class="col-5">
+                                <select [(ngModel)]="a1" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                    <option selected>-- select --</option>
+                                    <option value="N">No</option>
+                                    <option value="Y">Yes</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <hr>
+                        <div *ngIf="a1=='Y'" class="row" style="margin-top:20px;">
+                            <div class="col-1">
+
+                            </div>
+                            <div class="col-6">
+                                    <span style="font-size:20px;">Are the other organizations part of the same district?</span>
+                            </div>
+                            <div class="col-5">
+                                <select [(ngModel)]="a2" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                    <option selected>-- select --</option>
+                                    <option value="N">No</option>
+                                    <option value="Y">Yes</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <div *ngIf="a1=='Y'" class="row" style="margin-top:20px;">
+                            <div class="col-1">
+                                
+                            </div>
+                            <div class="col-6">
+                                    <span style="font-size:20px;">Please describe the organizations sharing your campus: </span>
+                            </div>
+                            <div class="col-5">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row" style="margin-top:20px;">
+                            <div class="col-7">
+                                    <span style="font-size:20px;">Are there visible signs of social unrest near the facility?</span>
+                            </div>
+                            <div class="col-5">
+                                <select [(ngModel)]="a3" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                    <option selected>-- select --</option>
+                                    <option value="N">No</option>
+                                    <option value="Y">Yes</option>
+                                    <option value="H">[Help me Answer]</option>
+                                  </select>
+                            </div>
+                        </div>
+                    <div *ngIf="a3=='Y'" [(ngModel)]="a3" class="row" style="margin-top:20px;">
+                        <div class="col-1">
+                            
+                        </div>
+                        <div class="col-6">
+                                <span style="font-size:20px;">Please describe: </span>
+                        </div>
+                        <div class="col-5">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
                         </div>
                     </div>
-                </div>
-                <div *ngIf="this.population=='Y'" class="card p-3" style="height: 500px">
-                    <div class="row">
-                        <div class="col-9">
-                            <h2>Student Population</h2>
-                        </div>
+                    <hr>
+                <div class="row" style="margin-top:20px;">
+                    <div class="col-7">
+                            <span style="font-size:20px;">Is there evidence that prostitution occurs around the school?</span>
+                    </div>
+                    <div class="col-5">
+                        <select [(ngModel)]="a4" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                            <option selected>-- select --</option>
+                            <option value="N">No</option>
+                            <option value="Y">Yes</option>
+                            <option value="H">[Help me Answer]</option>
+                          </select>
                     </div>
                 </div>
+                <hr>
+                <div class="row" style="margin-top:20px;">
+                    <div class="col-7">
+                            <span style="font-size:20px;">Do visible signs of drug paraphernalia exist in or near the school?</span>
+                    </div>
+                    <div class="col-5">
+                        <select [(ngModel)]="a5" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                            <option selected>-- select --</option>
+                            <option value="N">No</option>
+                            <option value="Y">Yes</option>
+                            <option value="H">[Help me Answer]</option>
+                          </select>
+                    </div>
+                </div>
+                <hr>
+                <div class="row" style="margin-top:20px;">
+                    <div class="col-7">
+                            <span style="font-size:20px;">Is there a gaming or gambling facility located adjacent or nearby to the school?</span>
+                    </div>
+                    <div class="col-5">
+                        <select [(ngModel)]="a6" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                            <option selected>-- select --</option>
+                            <option value="N">No</option>
+                            <option value="Y">Yes</option>
+                            <option value="H">[Help me Answer]</option>
+                          </select>
+                    </div>
+                </div>
+                <hr>
+                <div class="row" style="margin-top:20px;">
+                    <div class="col-7">
+                            <span style="font-size:20px;">Is there visible graffiti on or near the school?</span>
+                    </div>
+                    <div class="col-5">
+                        <select [(ngModel)]="a7" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                            <option selected>-- select --</option>
+                            <option value="N">No</option>
+                            <option value="Y">Yes</option>
+                            <option value="H">[Help me Answer]</option>
+                          </select>
+                    </div>
+                </div>
+                <hr>
+                <div class="row" style="margin-top:20px;">
+                    <div class="col-7">
+                            <span style="font-size:20px;">Do high levels of gang or organized crime activity exist in the surrounding area?</span>
+                    </div>
+                    <div class="col-5">
+                        <select [(ngModel)]="a8" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                            <option selected>-- select --</option>
+                            <option value="N">No</option>
+                            <option value="Y">Yes</option>
+                            <option value="H">[Help me Answer]</option>
+                          </select>
+                    </div>
+                </div>
+            <hr>
+            <div class="row" style="margin-top:20px;">
+                <div class="col-7">
+                        <span style="font-size:20px;">Is the school adjacent to public thoroughfares (i.e., publicly accessible right of way, such as a sidewalk, public park, or path)?</span>
+                </div>
+                <div class="col-5">
+                    <select [(ngModel)]="a9" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <option selected>-- select --</option>
+                        <option value="N">No</option>
+                        <option value="Y">Yes</option>
+                        <option value="H">[Help me Answer]</option>
+                      </select>
+                </div>
+            </div>
+            </div>
+            </div>
+
+
+                    </div>
+                    </div>
+                    <div *ngIf="this.population=='Y'" class="card p-3">
+                        <div class="row">
+                            <div class="col-11">
+                                <h2>Student Population</h2>
+                                <div class="card card-body mt-2">
+                                <div class="mb-3" style="color: black">
+                                    <label style="color: black" for="exampleFormControlInput1" class="form-label">Number of Students</label>
+                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                  </div>
+                                  <div class="mb-3">
+                                    <label style="color: black" for="exampleFormControlInput1" class="form-label">Number of Teachers</label>
+                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                  </div>
+                                  <div class="mb-3">
+                                    <label style="color: black" for="exampleFormControlInput1" class="form-label">Number of Admin Staff</label>
+                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                  </div>
+                                  <div class="mb-3">
+                                    <label style="color: black" for="exampleFormControlInput1" class="form-label">Number of Other Staff</label>
+                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                  </div>                            
+                        </div>
+                            <!-- A1 -->
+                            <div class="card card-body mt-2">
+                            <div class="row" style="margin-top:20px;">
+                                <div class="col-7">
+                                        <span style="font-size:20px;">What modes of transportation are used to transport students to school?</span>
+                                </div>
+                                <div class="col-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label style="font-size: 20px;" class="form-check-label" for="flexCheckDefault">
+                                          School Bus
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:20px;">
+                                <div class="col-7">
+                                    
+                                </div>
+                                <div class="col-5">
+                                    <div class="form-check">
+                                        <input [(ngModel)]="b2" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label style="font-size: 20px;" class="form-check-label" for="flexCheckDefault">
+                                          Parent Dropoff
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                            <div *ngIf="b2" class="row" style="margin-top:20px;">
+                                <div class="col-1">
+
+                                </div>
+                                <div class="col-5" style="font-size: 20px;" >
+                                    Check all that apply to parent dropoff:
+                                </div>
+                                <div class="col-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label style="font-size: 20px;" class="form-check-label" for="flexCheckDefault">
+                                          Students are dropped off outside campus
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                            <div *ngIf="b2" class="row" style="margin-top:20px;">
+                                <div class="col-1">
+
+                                </div>
+                                <div class="col-5" style="font-size: 20px;" >
+                                    
+                                </div>
+                                <div class="col-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label style="font-size: 20px;" class="form-check-label" for="flexCheckDefault">
+                                          There is a single droppoff area for students
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                            <div *ngIf="b2" class="row" style="margin-top:20px;">
+                                <div class="col-1">
+
+                                </div>
+                                <div class="col-5" style="font-size: 20px;" >
+                                    
+                                </div>
+                                <div class="col-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label style="font-size: 20px;" class="form-check-label" for="flexCheckDefault">
+                                          There are multiple droppoff areas for students
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                            <div *ngIf="b2" class="row" style="margin-top:20px;">
+                                <div class="col-1">
+
+                                </div>
+                                <div class="col-5" style="font-size: 20px;" >
+                                    
+                                </div>
+                                <div class="col-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label style="font-size: 20px;" class="form-check-label" for="flexCheckDefault">
+                                          Dropoff vehicles must be registered with the school
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                            <div *ngIf="b2" class="row" style="margin-top:20px;">
+                                <div class="col-1">
+
+                                </div>
+                                <div class="col-5" style="font-size: 20px;" >
+                                    
+                                </div>
+                                <div class="col-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label style="font-size: 20px;" class="form-check-label" for="flexCheckDefault">
+                                          All dropoffs are supervised by school staff
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:20px;">
+                                <div class="col-7">
+                                    
+                                </div>
+                                <div class="col-5">
+                                    <div class="form-check">
+                                        <input [(ngModel)]="b1" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label style="font-size: 20px;" class="form-check-label" for="flexCheckDefault">
+                                          Self Driven
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                            <div *ngIf="b1" class="row" style="margin-top:20px;">
+                                <div class="col-1">
+
+                                </div>
+                                <div class="col-5" style="font-size: 20px;" >
+                                    Check all that apply to student parking:
+                                </div>
+                                <div class="col-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label style="font-size: 20px;" class="form-check-label" for="flexCheckDefault">
+                                          There is dedicated parking for students
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                            <div *ngIf="b1" class="row" style="margin-top:20px;">
+                                <div class="col-1">
+
+                                </div>
+                                <div class="col-5" style="font-size: 20px;" >
+                                    
+                                </div>
+                                <div class="col-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label style="font-size: 20px;" class="form-check-label" for="flexCheckDefault">
+                                          Students share parking with facility
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                            <div *ngIf="b1" class="row" style="margin-top:20px;">
+                                <div class="col-1">
+
+                                </div>
+                                <div class="col-5" style="font-size: 20px;" >
+                                    
+                                </div>
+                                <div class="col-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label style="font-size: 20px;" class="form-check-label" for="flexCheckDefault">
+                                          Students share parking with visitors
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                            <div *ngIf="b1" class="row" style="margin-top:20px;">
+                                <div class="col-1">
+
+                                </div>
+                                <div class="col-5" style="font-size: 20px;" >
+                                    
+                                </div>
+                                <div class="col-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label style="font-size: 20px;" class="form-check-label" for="flexCheckDefault">
+                                          Students park nearby and walk to campus
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                            <div *ngIf="b1" class="row" style="margin-top:20px;">
+                                <div class="col-1">
+
+                                </div>
+                                <div class="col-5" style="font-size: 20px;" >
+                                    
+                                </div>
+                                <div class="col-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label style="font-size: 20px;" class="form-check-label" for="flexCheckDefault">
+                                          Parking Permits are Required
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:20px;">
+                                <div class="col-7">
+                                    
+                                </div>
+                                <div class="col-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label style="font-size: 20px;" class="form-check-label" for="flexCheckDefault">
+                                          Walking / Bicycle
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:20px;">
+                                <div class="col-7">
+                                    
+                                </div>
+                                <div class="col-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label style="font-size: 20px;" class="form-check-label" for="flexCheckDefault">
+                                          Public Trasportation
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                </div>
+                </div>
+    
+    
+                        </div>
+                        </div>
                 <div *ngIf="this.perimeter=='Y'" class="card p-3" style="height: 500px">
                     <div class="row">
                         <div class="col-9">
@@ -184,12 +610,6 @@
                     </div>
                 </div>
             </div>               
-
-
-                <div *ngIf="version=='Y'" class="card p-3">
-                    <hr/>
-                    <app-sql-upload [document_id]="doc_id" [workspace_id]="data.formData.id"></app-sql-upload>
-                </div>
             </div>
         </div>   
     </div>

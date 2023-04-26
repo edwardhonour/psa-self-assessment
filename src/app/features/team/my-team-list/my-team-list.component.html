@@ -11,6 +11,52 @@
                 </div>
             </div>
         </div>
+        <div class="row card card-body m-3">
+            <div class="row">
+                <div class="col-6">
+                    <button class="btn btn-secondary" (click)="toggleInviteT()">Invite Team</button>
+                    <button style="margin-left: 20px;" class="btn btn-secondary" (click)="toggleInviteT()">Invite Another School</button>
+                </div>           
+                <div class="col-6" style="text-align: right;">
+                </div>
+            </div>
+        </div> 
+        <div *ngIf="inviting=='Y'" class="card p-3">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Invite Team Member</h2>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" style="color: black" class="form-label">Email address</label>
+                        <input [(ngModel)]="formData.email" type="email" class="form-control" id="exampleFormControlInput1">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlInput1" style="color: black" class="form-label">Full Name</label>
+                        <input [(ngModel)]="formData.full_name" type="text" class="form-control" id="exampleFormControlInput1">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" style="color: black" class="form-label">Custom Message</label>
+                        <textarea [(ngModel)]="formData.custom_msg" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" style="color: black" class="form-label">Default Role</label>
+                        <select [(ngModel)]="formData.default_role" class="form-select" aria-label="Default select example">
+                            <option selected>-- Select --</option>
+                            <option value="0">Read Only</option>
+                            <option value="2">Read Write</option>
+                            <option value="3">Full Control</option>
+                            <option value="5">Upload Only</option>
+                            <option value="7">Administrator</option>
+                          </select>
+                     </div>
+                     <div class="mb-3">
+                            <button (click)="sendInviteT()" class="btn btn-primary">Send Invitation</button>
+                            <button style="margin-left: 20px;" (click)="toggleInviteT()" class="btn btn-light">Cancel</button>
+                     </div>
+                </div>
+            </div>
+        </div>     
         <div class="card-body">
             <div class="row">
                 <div class="col-sm-12">

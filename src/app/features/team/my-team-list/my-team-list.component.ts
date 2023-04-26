@@ -32,6 +32,28 @@ export class MyTeamListComponent implements OnInit, OnDestroy
   currentYear: any;
   email: any;
   user: any;
+  inviting: any = 'N';
+
+  formData: any = {
+    org_id: 0,
+    full_name: '',
+    custom_msg: '',
+    email: '',
+    default_role: '0'
+  }
+
+
+  sendInviteT() {
+
+  }
+  
+  toggleInviteT() {
+    if (this.inviting=='Y') {
+      this.inviting='N';
+    } else {
+      this.inviting='Y';
+    }
+  }
 
   private _unsubscribeAll: Subject<any> = new Subject<any>();
 

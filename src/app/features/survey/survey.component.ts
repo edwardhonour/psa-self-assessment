@@ -94,6 +94,18 @@ export class SurveyComponent  {
   //<li #row id="CYBER">Cyber Security</li>
 //  <li #row id="UTILITIES">Utility Dependencies</li>
 
+  a1: any = '';
+  a2: any = '';
+  a3: any = '';
+  a4: any = '';
+  a5: any = '';
+  a6: any = '';
+  a7: any = '';
+  a8: any = '';
+  a9: any = '';
+  a10: any = '';
+
+
   general: any = 'Y';
   population: any = 'N';
   perimeter: any = 'N';
@@ -109,6 +121,9 @@ export class SurveyComponent  {
   ess: any = 'N';
   cyber: any = 'N';
   utilities: any = 'N';
+
+  b1: any;
+  b2: any;
 
   formData: any = {
     org_id: 0,
@@ -178,6 +193,22 @@ closeUpload() {
   }
 
   processClick(m: any) {
+
+this.general='N'; 
+this.population='N'; 
+this.perimeter='N'; 
+this.approach='N'; 
+this.outdoor='N'; 
+this.envelope='N'; 
+this.entrycontrol='N'; 
+this.srp='N'; 
+this.response='N'; 
+this.staffing='N'; 
+this.incidents='N'; 
+this.threat='N'; 
+this.ess='N'; 
+this.cyber='N'; 
+this.utilities='N'; 
 
   if (m.id=='GENERAL') { this.general='Y'; }
   if (m.id=='POPULATION') { this.population='Y'; }
