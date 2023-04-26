@@ -1,0 +1,5 @@
+<div class="container-fluid" style="min-height: 700px; background-color:aliceblue">
+    <div *ngFor="let m of data?.questions" class="row">
+        <app-question-panel [survey_id]="'10'" [question_id]="m.option_id"></app-question-panel> 
+    </div>
+</div>
