@@ -4,7 +4,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { FormsModule,  FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-
+import { MatCheckboxChange } from '@angular/material/checkbox';
 import { DataService } from 'src/app/data.service'; 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxTablePaginationModule } from 'ngx-table-pagination';
@@ -48,13 +48,34 @@ export class QuestionPanelComponent implements OnChanges, OnInit {
       this.data=data;
      });
   }
-  
+
+  postChanges() {
+    this._dataService.postForm("post-survey-change", this.data).subscribe((data:any)=>{
+      this.data=data;
+     });
+  }
+
   clearOtherRadioButtons(id: any) {
 
   }
 
   updateItem(inputArray: any, item: any){
   
+  }
+
+  primaryCheckboxChange(ob: MatCheckboxChange, id: any) {
+    console.log(id);
+ //   let z = this.data.formData[id];
+    let p = 'p'+id;
+    console.log(p);
+    if (ob.checked) {
+      this.data.formData[p]='Y';
+      this.data.conditionals[p]='Y';
+    } else {
+      this.data.formData[p]='N';
+      this.data.conditionals[p]='N';
+    }
+    this.postChanges();
   }
 
   primaryRadioChange(id: any) {
@@ -65,13 +86,13 @@ export class QuestionPanelComponent implements OnChanges, OnInit {
         this.data.conditionals[prop]='N'
       }
     }
-
     let z = this.data.formData[this.data.question.model];
     let p = 'p'+z;
     console.log(p);
     this.data.formData[p]='Y';
     this.data.conditionals[p]='Y';
     console.log(this.data.conditionals)
+    this.postChanges();
   }
 
 }
