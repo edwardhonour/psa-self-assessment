@@ -89,179 +89,23 @@
                         </div>
                     </div>
                 </div>         
-                <div *ngIf="this.general=='Y'" class="card p-3">
-                    <div class="row">
-                        <div class="col-11">
-                            <h2>General Facility Description</h2>
-                            <div class="card card-body mt-2">
-                            <div class="mb-3" style="color: black">
-                                <label style="color: black" for="exampleFormControlInput1" class="form-label">School Name</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-                              </div>
-                              <div class="mb-3">
-                                <label style="color: black" for="exampleFormControlInput1" class="form-label">Physical Address</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-                              </div>
-                              <div class="mb-3">
-                                <label style="color: black" for="exampleFormControlInput1" class="form-label">Mailing Address</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-                              </div>
-                              <div class="row">
-                                <div class="col-3">
-                                        <label style="color: black" for="exampleFormControlInput1" class="form-label">City</label>
-                                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-                                </div>
-                                <div class="col-3">
-                                    <label style="color: black" for="exampleFormControlInput1" class="form-label">State</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-                            </div>
-                            <div class="col-3">
-                                <label style="color: black" for="exampleFormControlInput1" class="form-label">Zip</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-                            </div>
-                        </div>                              
-                    </div>
-                        <!-- A1 -->
-                        <div class="card card-body mt-2">
-                                <app-section-panel [survey_id]="'10'" [section_id]="'10'"></app-section-panel>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                    <div *ngIf="this.population=='Y'" class="card p-3">
-                        <div class="row">
-                            <div class="col-11">
-                                <h2>Student Population</h2>
-                                <div class="card card-body mt-2">
-                                <div class="mb-3" style="color: black">
-                                    <label style="color: black" for="exampleFormControlInput1" class="form-label">Number of Students</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-                                  </div>
-                                  <div class="mb-3">
-                                    <label style="color: black" for="exampleFormControlInput1" class="form-label">Number of Teachers</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-                                  </div>
-                                  <div class="mb-3">
-                                    <label style="color: black" for="exampleFormControlInput1" class="form-label">Number of Admin Staff</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-                                  </div>
-                                  <div class="mb-3">
-                                    <label style="color: black" for="exampleFormControlInput1" class="form-label">Number of Other Staff</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-                                  </div>                            
-                        </div>
-                        </div>
-                        </div>
-                        </div>
-                        <div *ngIf="this.transportation=='Y'" class="card p-3">
-                            <div class="row">
-                                <div class="col-11">
-                                    <h2>Student Transportation</h2>
-                                       <div class="card card-body mt-2">
-                                           <app-section-panel [survey_id]="'10'" [section_id]="'30'"></app-section-panel> 
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                <div *ngIf="this.perimeter=='Y'" class="card p-3">
-                    <div class="row">
-                        <div class="col-9">
-                            <h2>Perimeter Security</h2>
-                        </div>
-                        <app-section-panel [survey_id]="'10'" [section_id]="'40'"></app-section-panel>
-                    </div>
-                </div>                
-                <div *ngIf="this.approach=='Y'" class="card p-3">
-                    <div class="row">
-                        <div class="col-9">
-                            <h2>Approach and Parking</h2>
-                        </div>
-                    </div>
-                    <app-section-panel [survey_id]="'10'" [section_id]="'50'"></app-section-panel>
-                </div>                
-                <div *ngIf="this.outdoor=='Y'" class="card p-3">
-                    <div class="row">
-                        <div class="col-9">
-                            <h2>Outdoor Areas</h2>
-                        </div>
-                    </div>
-                    <app-section-panel [survey_id]="'10'" [section_id]="'60'"></app-section-panel>
-                </div>                
-
-            <div *ngIf="this.envelope=='Y'" class="card p-3">
-                <div class="row">
-                    <div class="col-9">
-                        <h2>Building Envelope</h2>
-                    </div>
-                    <app-section-panel [survey_id]="'10'" [section_id]="'70'"></app-section-panel>
+                    <app-general-description *ngIf="this.general=='Y'"></app-general-description>
+                    <app-student-population  *ngIf="this.population=='Y'" ></app-student-population>
+                    <app-student-transportation *ngIf="this.transportation=='Y'"></app-student-transportation>
+                    <app-perimeter-security *ngIf="this.perimeter=='Y'"></app-perimeter-security>      
+                    <app-approach-parking *ngIf="this.approach=='Y'"></app-approach-parking>             
+                    <app-outdoor-areas *ngIf="this.outdoor=='Y'"></app-outdoor-areas>      
+                    <app-building-envelope *ngIf="this.envelope=='Y'"></app-building-envelope> 
+                    <app-entry-controls  *ngIf="this.entrycontrol=='Y'"></app-entry-controls>             
+                    <app-security-response-planing *ngIf="this.srp=='Y'" ></app-security-response-planing>
+                    <app-emergency-response *ngIf="this.response=='Y'"></app-emergency-response>
+                    <app-security-force-staffing *ngIf="this.staffing=='Y'"></app-security-force-staffing>
+                    <app-incident-history *ngIf="this.incidents=='Y'" ></app-incident-history>             
+                    <app-likely-threats  *ngIf="this.threat=='Y'" ></app-likely-threats>
+                    <app-electronic-security-systems *ngIf="this.ess=='Y'"></app-electronic-security-systems>
+                    <app-cyber-security *ngIf="this.cyber=='Y'"></app-cyber-security>            
                 </div>
             </div>   
-            <div *ngIf="this.entrycontrol=='Y'" class="card p-3">
-                <div class="row">
-                    <div class="col-9">
-                        <h2>Entry Controls</h2>
-                    </div>
-                    <app-section-panel [survey_id]="'10'" [section_id]="'80'"></app-section-panel>
-                </div>
-            </div>                
-            <div *ngIf="this.srp=='Y'" class="card p-3">
-                <div class="row">
-                    <div class="col-9">
-                        <h2>Security / Response Planning</h2>
-                    </div>
-                    <app-section-panel [survey_id]="'10'" [section_id]="'90'"></app-section-panel>
-                </div>
-            </div>   
-            <div *ngIf="this.response=='Y'" class="card p-3" style="height: 500px">
-                <div class="row">
-                    <div class="col-9">
-                        <h2>Emergency Response</h2>
-                    </div>
-                    <app-section-panel [survey_id]="'10'" [section_id]="'100'"></app-section-panel>
-                </div>
-            </div>   
-            <div *ngIf="this.staffing=='Y'" class="card p-3" style="height: 500px">
-                <div class="row">
-                    <div class="col-9">
-                        <h2>Security Force Staffing</h2>
-                    </div>
-                    <app-section-panel [survey_id]="'10'" [section_id]="'110'"></app-section-panel>
-                </div>
-            </div>  
-            <div *ngIf="this.incidents=='Y'" class="card p-3" style="height: 500px">
-                <div class="row">
-                    <div class="col-9">
-                        <h2>Incident History</h2>
-                    </div>
-                    <app-section-panel [survey_id]="'10'" [section_id]="'120'"></app-section-panel>
-                </div>
-            </div>               
-            <div *ngIf="this.threat=='Y'" class="card p-3" style="height: 500px">
-                <div class="row">
-                    <div class="col-9">
-                        <h2>Likely Threats</h2>
-                    </div>
-                    <app-section-panel [survey_id]="'10'" [section_id]="'130'"></app-section-panel>
-                </div>
-            </div>   
-            <div *ngIf="this.ess=='Y'" class="card p-3">
-                <div class="row">
-                    <div class="col-9">
-                        <h2>Electronic Security Systems</h2>
-                    </div>
-                    <app-section-panel [survey_id]="'10'" [section_id]="'140'"></app-section-panel>
-                </div>
-            </div>
-            <div *ngIf="this.cyber=='Y'" class="card p-3">
-                <div class="row">
-                    <div class="col-9">
-                        <h2>Cyber Security</h2>
-                    </div>
-                    <app-section-panel [survey_id]="'10'" [section_id]="'150'"></app-section-panel>
-                </div>
-            </div>                
-            </div>
-        </div>   
     </div>
     </div>    
     <div class="relative flex flex-0 items-center justify-start w-full h-14 px-4 md:px-6 z-49 border-t bg-card dark:bg-transparent print:hidden">
