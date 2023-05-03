@@ -40,7 +40,6 @@
                         <li #row id="THREAT-130">Likely Threats</li>
                         <li #row id="ESS-140">Electronic Security Systems</li>
                         <li #row id="CYBER-150">Cyber Security</li>
-                        <li #row id="UTILITIES-160">Utility Dependencies</li>
                     </sql-menu>
                 </div>
             </div>
@@ -158,239 +157,13 @@
                             <div class="row">
                                 <div class="col-11">
                                     <h2>Student Transportation</h2>
-                            <div class="card card-body mt-2">
-             <!--                  <app-section-panel [survey_id]="'10'" [section_id]="'30'"></app-section-panel> -->
-                  
-                            <div class="row" style="margin-top:18px;">
-                                <div class="col-7">
-                                        <span style="font-size:16px;">What modes of transportation are used to transport students to school?</span>
-                                </div>
-                                <div class="col-5">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label style="font-size: 16px;" class="form-check-label" for="flexCheckDefault">
-                                          School Bus
-                                        </label>
-                                      </div>
+                                       <div class="card card-body mt-2">
+                                           <app-section-panel [survey_id]="'10'" [section_id]="'30'"></app-section-panel> 
+                                        </div>
                                 </div>
                             </div>
-                            <div class="row" style="margin-top:16px;">
-                                <div class="col-7">
-                                    
-                                </div>
-                                <div class="col-5">
-                                    <div class="form-check">
-                                        <input [(ngModel)]="b2" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label style="font-size: 16px;" class="form-check-label" for="flexCheckDefault">
-                                          Parent Dropoff
-                                        </label>
-                                      </div>
-                                </div>
-                            </div>
-                            <div *ngIf="b2" class="row" style="margin-top:16px;">
-                                <div class="col-1">
-
-                                </div>
-                                <div class="col-5" style="font-size: 16px;" >
-                                    Check all that apply to parent dropoff:
-                                </div>
-                                <div class="col-5">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label style="font-size: 16px;" class="form-check-label" for="flexCheckDefault">
-                                          Students are dropped off outside campus
-                                        </label>
-                                      </div>
-                                </div>
-                            </div>
-                            <div *ngIf="b2" class="row" style="margin-top:16px;">
-                                <div class="col-1">
-
-                                </div>
-                                <div class="col-5" style="font-size: 16px;" >
-                                    
-                                </div>
-                                <div class="col-5">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label style="font-size: 16px;" class="form-check-label" for="flexCheckDefault">
-                                          There is a single droppoff area for students
-                                        </label>
-                                      </div>
-                                </div>
-                            </div>
-                            <div *ngIf="b2" class="row" style="margin-top:16px;">
-                                <div class="col-1">
-
-                                </div>
-                                <div class="col-5" style="font-size: 16px;" >
-                                    
-                                </div>
-                                <div class="col-5">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label style="font-size: 16px;" class="form-check-label" for="flexCheckDefault">
-                                          There are multiple droppoff areas for students
-                                        </label>
-                                      </div>
-                                </div>
-                            </div>
-                            <div *ngIf="b2" class="row" style="margin-top:16px;">
-                                <div class="col-1">
-
-                                </div>
-                                <div class="col-5" style="font-size: 16px;" >
-                                    
-                                </div>
-                                <div class="col-5">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label style="font-size: 16px;" class="form-check-label" for="flexCheckDefault">
-                                          Dropoff vehicles must be registered with the school
-                                        </label>
-                                      </div>
-                                </div>
-                            </div>
-                            <div *ngIf="b2" class="row" style="margin-top:16px;">
-                                <div class="col-1">
-
-                                </div>
-                                <div class="col-5" style="font-size: 16px;" >
-                                    
-                                </div>
-                                <div class="col-5">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label style="font-size: 16px;" class="form-check-label" for="flexCheckDefault">
-                                          All dropoffs are supervised by school staff
-                                        </label>
-                                      </div>
-                                </div>
-                            </div>
-                            <div class="row" style="margin-top:16px;">
-                                <div class="col-7">
-                                    
-                                </div>
-                                <div class="col-5">
-                                    <div class="form-check">
-                                        <input [(ngModel)]="b1" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label style="font-size: 16px;" class="form-check-label" for="flexCheckDefault">
-                                          Self Driven
-                                        </label>
-                                      </div>
-                                </div>
-                            </div>
-                            <div *ngIf="b1" class="row" style="margin-top:16px;">
-                                <div class="col-1">
-
-                                </div>
-                                <div class="col-5" style="font-size: 16px;" >
-                                    Check all that apply to student parking:
-                                </div>
-                                <div class="col-5">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label style="font-size: 16px;" class="form-check-label" for="flexCheckDefault">
-                                          There is dedicated parking for students
-                                        </label>
-                                      </div>
-                                </div>
-                            </div>
-                            <div *ngIf="b1" class="row" style="margin-top:16px;">
-                                <div class="col-1">
-
-                                </div>
-                                <div class="col-5" style="font-size: 16px;" >
-                                    
-                                </div>
-                                <div class="col-5">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label style="font-size: 16px;" class="form-check-label" for="flexCheckDefault">
-                                          Students share parking with facility
-                                        </label>
-                                      </div>
-                                </div>
-                            </div>
-                            <div *ngIf="b1" class="row" style="margin-top:16px;">
-                                <div class="col-1">
-
-                                </div>
-                                <div class="col-5" style="font-size: 16px;" >
-                                    
-                                </div>
-                                <div class="col-5">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label style="font-size: 16px;" class="form-check-label" for="flexCheckDefault">
-                                          Students share parking with visitors
-                                        </label>
-                                      </div>
-                                </div>
-                            </div>
-                            <div *ngIf="b1" class="row" style="margin-top:16px;">
-                                <div class="col-1">
-
-                                </div>
-                                <div class="col-5" style="font-size: 16px;" >
-                                    
-                                </div>
-                                <div class="col-5">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label style="font-size: 16px;" class="form-check-label" for="flexCheckDefault">
-                                          Students park nearby and walk to campus
-                                        </label>
-                                      </div>
-                                </div>
-                            </div>
-                            <div *ngIf="b1" class="row" style="margin-top:16px;">
-                                <div class="col-1">
-
-                                </div>
-                                <div class="col-5" style="font-size: 16px;" >
-                                    
-                                </div>
-                                <div class="col-5">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label style="font-size: 16px;" class="form-check-label" for="flexCheckDefault">
-                                          Parking Permits are Required
-                                        </label>
-                                      </div>
-                                </div>
-                            </div>
-                            <div class="row" style="margin-top:16px;">
-                                <div class="col-7">
-                                    
-                                </div>
-                                <div class="col-5">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label style="font-size: 16px;" class="form-check-label" for="flexCheckDefault">
-                                          Walking / Bicycle
-                                        </label>
-                                      </div>
-                                </div>
-                            </div>
-                            <div class="row" style="margin-top:16px;">
-                                <div class="col-7">
-                                    
-                                </div>
-                                <div class="col-5">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label style="font-size: 16px;" class="form-check-label" for="flexCheckDefault">
-                                          Public Trasportation
-                                        </label>
-                                      </div>
-                                </div>
-                            </div> 
-                </div>
-                </div>
-                </div>
-                </div>
-                <div *ngIf="this.perimeter=='Y'" class="card p-3" style="height: 500px">
+                        </div>
+                <div *ngIf="this.perimeter=='Y'" class="card p-3">
                     <div class="row">
                         <div class="col-9">
                             <h2>Perimeter Security</h2>
@@ -398,7 +171,7 @@
                         <app-section-panel [survey_id]="'10'" [section_id]="'40'"></app-section-panel>
                     </div>
                 </div>                
-                <div *ngIf="this.approach=='Y'" class="card p-3" style="height: 500px">
+                <div *ngIf="this.approach=='Y'" class="card p-3">
                     <div class="row">
                         <div class="col-9">
                             <h2>Approach and Parking</h2>
@@ -406,7 +179,7 @@
                     </div>
                     <app-section-panel [survey_id]="'10'" [section_id]="'50'"></app-section-panel>
                 </div>                
-                <div *ngIf="this.outdoor=='Y'" class="card p-3" style="height: 500px">
+                <div *ngIf="this.outdoor=='Y'" class="card p-3">
                     <div class="row">
                         <div class="col-9">
                             <h2>Outdoor Areas</h2>
@@ -415,7 +188,7 @@
                     <app-section-panel [survey_id]="'10'" [section_id]="'60'"></app-section-panel>
                 </div>                
 
-            <div *ngIf="this.envelope=='Y'" class="card p-3" style="height: 500px">
+            <div *ngIf="this.envelope=='Y'" class="card p-3">
                 <div class="row">
                     <div class="col-9">
                         <h2>Building Envelope</h2>
@@ -423,7 +196,7 @@
                     <app-section-panel [survey_id]="'10'" [section_id]="'70'"></app-section-panel>
                 </div>
             </div>   
-            <div *ngIf="this.entrycontrol=='Y'" class="card p-3" style="height: 500px">
+            <div *ngIf="this.entrycontrol=='Y'" class="card p-3">
                 <div class="row">
                     <div class="col-9">
                         <h2>Entry Controls</h2>
@@ -478,7 +251,7 @@
                     </div>
                     <app-section-panel [survey_id]="'10'" [section_id]="'140'"></app-section-panel>
                 </div>
-            </div>               
+            </div>
             <div *ngIf="this.cyber=='Y'" class="card p-3">
                 <div class="row">
                     <div class="col-9">
@@ -486,15 +259,7 @@
                     </div>
                     <app-section-panel [survey_id]="'10'" [section_id]="'150'"></app-section-panel>
                 </div>
-            </div>   
-            <div *ngIf="this.utilities=='Y'" class="card p-3">
-                <div class="row">
-                    <div class="col-9">
-                        <h2>Utility Dependencies</h2>
-                    </div>
-                    <app-section-panel [survey_id]="'10'" [section_id]="'160'"></app-section-panel>
-                </div>
-            </div>               
+            </div>                
             </div>
         </div>   
     </div>

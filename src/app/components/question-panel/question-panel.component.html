@@ -1,6 +1,12 @@
 <div class="container-fluid">
     <!-- Radio Group: All Options provide a single value into parent -->
     <mat-card *ngIf="data?.question.option_type=='Radio Group'" style="margin-bottom: 20px;">
+        <div class="row">
+            <div class="col-12 p-1" style="text-align: right;">
+                <button class="btn btn-primary" style="margin-left:20px;"><i class="bi bi-chat-square-text"></i></button>
+                <button class="btn btn-primary" style="margin-left:20px; margin-right:20px;"><i class="bi bi-camera"></i></button>
+            </div>
+        </div>
         <mat-card-title style="padding:20px; font-size: 18px;">
             <span style="font-size: 16px!important;">{{ data.question.option_text }}</span>
         </mat-card-title>
@@ -17,6 +23,12 @@
     </mat-card>
     <!-- Checkbox Group: Each option is saved as an individual value -->
     <mat-card *ngIf="data?.question.option_type=='Checkbox Group'"  style="margin-bottom: 20px;">
+        <div class="row">
+            <div class="col-12 p-1" style="text-align: right;">
+                <button class="btn btn-primary" style="margin-left:20px;"><i class="bi bi-chat-square-text"></i></button>
+                <button class="btn btn-primary" style="margin-left:20px; margin-right:20px;"><i class="bi bi-camera"></i></button>
+            </div>
+        </div>
         <mat-card-title  style="padding:20px; font-size: 18px;"><span style="font-size: 16px!important;">{{ data.question.option_text }}</span></mat-card-title>
         <mat-card-content>
                 <ng-container *ngFor="let m of data.options">
