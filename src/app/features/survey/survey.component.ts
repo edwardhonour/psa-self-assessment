@@ -92,6 +92,9 @@ export class SurveyComponent  {
   inviting: any = 'N';
   sharing: any = 'N';
   managing: any = 'N';
+  section_code: any = '';
+  org_id: any = 0;
+
 
   version: any = 'N';
   k: any;
@@ -130,6 +133,7 @@ export class SurveyComponent  {
   transportation: any = 'N';
   emergency: any = 'N';
 
+
   b1: any;
   b2: any;
 
@@ -145,6 +149,83 @@ export class SurveyComponent  {
           this._activatedRoute.data.subscribe(({ 
             data, menudata, userdata })=> { 
             this.data=data;
+            this.general='N'; 
+            this.population='N'; 
+            this.transportation='N'; 
+            this.perimeter='N'; 
+            this.approach='N'; 
+            this.outdoor='N'; 
+            this.envelope='N'; 
+            this.entrycontrol='N'; 
+            this.srp='N'; 
+            this.response='N'; 
+            this.staffing='N'; 
+            this.incidents='N'; 
+            this.threat='N'; 
+            this.ess='N'; 
+            this.cyber='N'; 
+            this.utilities='N'; 
+            this.emergency='N';      
+            if (this.data.section_id=='10') { 
+                 this.section_code='GENERAL-10';
+                 this.general='Y';
+            }
+            if (this.data.section_id=='20') { 
+              this.section_code='POPULATION-20';
+              this.population='Y';
+            }
+           if (this.data.section_id=='30') { 
+               this.section_code='TRANSPORTATION-30';
+               this.transportation='Y';
+           }
+           if (this.data.section_id=='40') { 
+              this.section_code='PERIMETER-40';
+              this.perimeter='Y';
+          }
+         if (this.data.section_id=='50') { 
+              this.section_code='APPROACH-50';
+              this.approach='Y';
+        }
+        if (this.data.section_id=='60') { 
+              this.section_code='OUTDOOR-60';
+              this.outdoor='Y';
+        }
+        if (this.data.section_id=='70') { 
+              this.section_code='ENVELOPE-70';
+              this.envelope='Y';
+        }
+        if (this.data.section_id=='80') { 
+              this.section_code='ENTRYCONTROL-80';
+              this.entrycontrol='Y';
+        }
+        if (this.data.section_id=='90') { 
+              this.section_code='SRP-90';
+              this.srp='Y';
+        }
+        if (this.data.section_id=='100') { 
+              this.section_code='RESPONSE-100';
+              this.response='Y';
+        }
+        if (this.data.section_id=='110') { 
+              this.section_code='STAFFING-110';
+              this.staffing='Y';
+        }
+        if (this.data.section_id=='120') { 
+              this.section_code='INCIDENTS-120';
+              this.incidents='Y';
+        }
+        if (this.data.section_id=='130') { 
+              this.section_code='THREAT-10';
+              this.threat='Y';
+        }
+        if (this.data.section_id=='140') { 
+            this.section_code='ESS-140';
+            this.ess='Y';
+        }          
+        if (this.data.section_id=='150') { 
+            this.section_code='CYBER-150';
+            this.cyber='Y';
+        }                
             console.log(this.data);
             if (this.data.user.force_logout>0) {
                 localStorage.removeItem('uid');
@@ -236,7 +317,6 @@ closeUpload() {
     if (m.id=='ESS-140') { this.ess='Y'; }
     if (m.id=='CYBER-150') { this.cyber='Y'; }
     if (m.id=='UTILITIES-160') { this.utilities='Y'; }
-
 
   }
 

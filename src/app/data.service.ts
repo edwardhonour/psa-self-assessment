@@ -204,6 +204,23 @@ export class FileUploadService {
     });
   }
 
+
+  uploadPhoto(file:File, postData: any): Observable<any> {
+
+    const formData = new FormData();
+
+    formData.append('file', file, file.name);
+    let k: keyof typeof postData;  
+    for (k in postData) {
+      formData.append(k,postData[k]);
+    }
+
+    return this.http.post("https://protectivesecurity.org/psp_upload_photo.php", formData, { 
+      reportProgress: true,
+      observe: 'events',
+    });
+  }
+
   upload_verify(file:File, postData: any): Observable<any> {
 
 

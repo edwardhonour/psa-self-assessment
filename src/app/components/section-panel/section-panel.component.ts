@@ -33,6 +33,8 @@ export class SectionPanelComponent implements OnChanges, OnInit{
 
   ngOnInit(): void {
    this.postForm(); 
+   console.log("Section ID " + this.section_id);
+   console.log("Survey ID " + this.survey_id);
   }
 
   constructor(private _dataService: DataService) {}

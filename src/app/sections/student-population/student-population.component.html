@@ -32,5 +32,17 @@
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
           </div>                            
 </div>
-    <app-section-panel [survey_id]="'10'" [section_id]="'80'"></app-section-panel>
+<div class="row">
+  <div class="col-12 p-2" style="background-color: lightgray;">
+        <button (click)="togglePhotos()" class="btn btn-primary">Photos</button>
+        <button (click)="toggleDocuments()" style="margin-left: 20px;" class="btn btn-primary">Documents</button>
+        <button (click)="toggleComments()" style="margin-left: 20px;" class="btn btn-primary">Comments</button>            
+        <button (click)="toggleSaa()" style="margin-left: 20px;" class="btn btn-primary">Critical Areas</button>   
+  </div>
+</div>
+<app-section-comments *ngIf="show_comments=='Y'" [survey_id]="org_id" [section_id]="'20'" (close)="closeAll()"></app-section-comments>
+<app-section-documents *ngIf="show_documents=='Y'" [survey_id]="org_id" [section_id]="'20'" (close)="closeAll()"></app-section-documents>
+<app-section-photos *ngIf="show_photos=='Y'" [survey_id]="org_id" [section_id]="'20'" (close)="closeAll()"></app-section-photos>
+<app-section-saa *ngIf="show_saa=='Y'" [survey_id]="org_id" [section_id]="'20'" (close)="closeAll()"></app-section-saa>
+<app-section-panel [survey_id]="org_id" [section_id]="'20'"></app-section-panel>
 </div>

@@ -8,7 +8,7 @@
         <div class="row card card-body m-3">
             <div class="col-8" style="background-color: white;">
                 <h1>Assessment Survey</h1>
-                <h2 class="mt-2">{{ data?.formData?.workspace_name }}</h2>
+                <h2 class="mt-2">{{ data?.formData?.org_name }}</h2>
             </div>   
         </div>
         <div class="row card card-body m-3">
@@ -24,9 +24,8 @@
             <div class="col-3">
                 <div class="card card-body">
                     <h2>Main Menu</h2>
-                    <sql-menu (menuClick)="processClick($event);" [active]="'GENERAL'">
+                    <sql-menu (menuClick)="processClick($event);" [active]="section_code">
                         <li #row id="GENERAL-10">General Description</li>
-                        <li #row id="SRP-90">Security / Response Planning</li>
                         <li #row id="POPULATION-20">Student Population</li>
                         <li #row id="TRANSPORTATION-30">Student Transportation</li>
                         <li #row id="PERIMETER-40">Perimeter Security</li>
@@ -34,6 +33,7 @@
                         <li #row id="OUTDOOR-60">Outdoor Areas</li>
                         <li #row id="ENVELOPE-70">Building Envelope</li>
                         <li #row id="ENTRYCONTROL-80">Entry Controls</li>
+                        <li #row id="SRP-90">Security / Response Planning</li>                        
                         <li #row id="RESPONSE-100">Emergency Response</li>
                         <li #row id="STAFFING-110">Security Force & Staffing</li>
                         <li #row id="INCIDENTS-120">Incident History</li>
@@ -89,21 +89,21 @@
                         </div>
                     </div>
                 </div>         
-                    <app-general-description *ngIf="this.general=='Y'"></app-general-description>
-                    <app-student-population  *ngIf="this.population=='Y'" ></app-student-population>
-                    <app-student-transportation *ngIf="this.transportation=='Y'"></app-student-transportation>
-                    <app-perimeter-security *ngIf="this.perimeter=='Y'"></app-perimeter-security>      
-                    <app-approach-parking *ngIf="this.approach=='Y'"></app-approach-parking>             
-                    <app-outdoor-areas *ngIf="this.outdoor=='Y'"></app-outdoor-areas>      
-                    <app-building-envelope *ngIf="this.envelope=='Y'"></app-building-envelope> 
-                    <app-entry-controls  *ngIf="this.entrycontrol=='Y'"></app-entry-controls>             
-                    <app-security-response-planing *ngIf="this.srp=='Y'" ></app-security-response-planing>
-                    <app-emergency-response *ngIf="this.response=='Y'"></app-emergency-response>
-                    <app-security-force-staffing *ngIf="this.staffing=='Y'"></app-security-force-staffing>
-                    <app-incident-history *ngIf="this.incidents=='Y'" ></app-incident-history>             
-                    <app-likely-threats  *ngIf="this.threat=='Y'" ></app-likely-threats>
-                    <app-electronic-security-systems *ngIf="this.ess=='Y'"></app-electronic-security-systems>
-                    <app-cyber-security *ngIf="this.cyber=='Y'"></app-cyber-security>            
+                    <app-general-description [org_id]="org_id" *ngIf="this.general=='Y'"></app-general-description>
+                    <app-student-population [org_id]="org_id" *ngIf="this.population=='Y'" ></app-student-population>
+                    <app-student-transportation [org_id]="org_id" *ngIf="this.transportation=='Y'"></app-student-transportation>
+                    <app-perimeter-security [org_id]="org_id" *ngIf="this.perimeter=='Y'"></app-perimeter-security>      
+                    <app-approach-parking  [org_id]="org_id" *ngIf="this.approach=='Y'"></app-approach-parking>             
+                    <app-outdoor-areas [org_id]="org_id" *ngIf="this.outdoor=='Y'"></app-outdoor-areas>      
+                    <app-building-envelope [org_id]="org_id" *ngIf="this.envelope=='Y'"></app-building-envelope> 
+                    <app-entry-controls  [org_id]="org_id" *ngIf="this.entrycontrol=='Y'"></app-entry-controls>             
+                    <app-security-response-planing [org_id]="org_id" *ngIf="this.srp=='Y'" ></app-security-response-planing>
+                    <app-emergency-response [org_id]="org_id" *ngIf="this.response=='Y'"></app-emergency-response>
+                    <app-security-force-staffing [org_id]="org_id" *ngIf="this.staffing=='Y'"></app-security-force-staffing>
+                    <app-incident-history [org_id]="org_id" *ngIf="this.incidents=='Y'" ></app-incident-history>             
+                    <app-likely-threats [org_id]="org_id" *ngIf="this.threat=='Y'" ></app-likely-threats>
+                    <app-electronic-security-systems [org_id]="org_id" *ngIf="this.ess=='Y'"></app-electronic-security-systems>
+                    <app-cyber-security [org_id]="org_id" *ngIf="this.cyber=='Y'"></app-cyber-security>            
                 </div>
             </div>   
     </div>

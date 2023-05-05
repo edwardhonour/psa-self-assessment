@@ -28,6 +28,7 @@ import { MyTeamListComponent } from './features/team/my-team-list/my-team-list.c
 import { DocumentShareListComponent } from './features/documents/document-share-list/document-share-list.component';
 import { AdminOrgListComponent } from './features/organizations/admin-org-list/admin-org-list.component';
 import { SurveyComponent } from './features/survey/survey.component';
+import { GettingStartedComponent } from './pages/getting-started/getting-started.component';
 
 const routes: Routes = [
   { path: '', component: NewSigninComponent },
@@ -35,10 +36,12 @@ const routes: Routes = [
   { path: 'workspaces', component: DocWorkspaceListComponent },
   { path: 'orgs', component: AdminOrgListComponent, resolve: { data: DataResolver }},
   { path: 'settings', component: SettingsComponent, resolve: { data: DataResolver }},
+  { path: 'getting-started', component: GettingStartedComponent },
   { path: 'verify', component: VerifyDocComponent, resolve: { data: DataResolver }},
   { path: 'documents', component: DocumentListComponent, resolve: { data: DataResolver }  },
   { path: 'workspace-dashboard/:id', component: ProjectDashboardComponent, resolve: { data: DataResolver }  },
   { path: 'survey/:id', component: SurveyComponent, resolve: { data: DataResolver }  },
+  { path: 'survey/:id/:id2', component: SurveyComponent, resolve: { data: DataResolver }  },
   { path: 'document-dashboard/:id', component: DocumentDashboardComponent, resolve: { data: DataResolver }  },
   { path: 'org-dashboard/:id', component: OrgDashboardComponent, resolve: { data: DataResolver }  },
   { path: 'team', component: MyTeamListComponent, resolve: { data: DataResolver }  },
