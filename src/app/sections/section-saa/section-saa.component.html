@@ -1,1 +1,65 @@
-<p>section-saa works!</p>
+<div class="card" style="margin-top:20px;">
+    <div class="card-header">
+        <h2>Section Critical Areas</h2>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-5">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Description:</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+                  </div>
+                  <div class="mb-3">
+                  <select class="form-select">
+                    <option selected>Select Area/Asset Type</option>
+                    <option value="1">Perimeter Fence</option>
+                    <option value="1">Vehicle Entrance to Campus</option>
+                    <option value="1">Vehicle Gate</option>
+                    <option value="1">Avenue of Approach</option>
+                    <option value="2">Pedestrian Entrance to Campus</option>
+                    <option value="3">Student Dropoff / Bus</option>
+                    <option value="4">Student Dropoff / Auto</option>
+                    <option value="5">Building Entrance</option>
+                    <option value="6">Delivery Area / Dock</option>
+                    <option value="7">Outdoor Playground</option>
+                    <option value="8">Outdoor Gym Area</option>
+                    <option value="9">Outdoor Sports / Event Facility</option>
+                    <option value="8">Indoor Gym Area</option>
+                    <option value="9">Indoor Sports / Event Facility</option>
+                    <option value="8">Indoor Assembly Area</option>
+                    <option value="1">Exterior Door</option>
+                    <option value="1">Interior Door</option>
+                    <option value="1">Exterior Window</option>
+                    <option value="1">Interior Window</option>
+                    <option value="1">Access Control System (ID Actuated)</option>
+                    <option value="1">Magnetometer</option>
+                    <option value="1">Video Surveillance System</option>
+                    <option value="1">Fire Alarm</option>
+                    <option value="1">Panic Button</option>
+                  </select>
+                  </div>
+            </div>
+            <div class="col-7">
+                <h3>Existing Comments (this section)</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Date/Time</th>
+                            <th>Uploaded By</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" style="text-align: right;">
+                <button (click)="closeIt()" class="btn btn-secondary">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

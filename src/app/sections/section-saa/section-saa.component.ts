@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,9 +8,20 @@ import { CommonModule } from '@angular/common';
   templateUrl: './section-saa.component.html',
   styleUrls: ['./section-saa.component.css']
 })
-export class SectionSaaComponent {
+export class SectionSaaComponent  implements OnInit {
   @Input() survey_id: any = '';
   @Input() section_id: any = '';
+  @Input() data: any;
+
   @Output() close: EventEmitter<any> = new EventEmitter<any>();
   
+  closeIt() {
+   this.close.emit('N');
+ }
+
+ ngOnInit(): void {
+     console.log('Section Photos') 
+     console.log(this.data); 
+ }
+
 }
