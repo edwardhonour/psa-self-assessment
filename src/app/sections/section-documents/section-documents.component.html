@@ -1,1 +1,29 @@
-<p>section-documents works!</p>
+<div class="card" style="margin-top:20px;">
+    <div class="card-header">
+        <h2>Section Documents</h2>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-5">
+                <app-upload-document></app-upload-document>
+            </div>
+            <div class="col-7">
+                <h3>Existing Documents (this section)</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Document Name</th>
+                            <th>Date/Time</th>
+                            <th>Uploaded By</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" style="text-align: right;">
+                <button (click)="closeIt()" class="btn btn-secondary">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

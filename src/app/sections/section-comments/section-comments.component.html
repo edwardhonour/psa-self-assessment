@@ -1,1 +1,39 @@
-<p>section-comments works!</p>
+<div class="card" style="margin-top:20px;">
+    <div class="card-header">
+        <h2>Section Comments</h2>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-5">
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Comment:</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+                  </div>
+                  <div class="mb-3">
+                  <select class="form-select">
+                    <option selected>Select Comment Type</option>
+                    <option value="1">Include in Report</option>
+                    <option value="2">Private Comment for Team</option>
+                  </select>
+                  </div>
+            </div>
+            <div class="col-7">
+                <h3>Existing Comments (this section)</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Date/Time</th>
+                            <th>Uploaded By</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" style="text-align: right;">
+                <button (click)="closeIt()" class="btn btn-secondary">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-<h2>Upload Photo</h2>
+<h3>Upload Photo</h3>
     <file-upload class="fileUpload"  
             (ngFileDrop)="drop();" 
             [control]="fileUploadControl" 
@@ -9,6 +9,14 @@
                 <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width.%]="progress">
                 </div>
             </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Document Name</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
     <div class="row p-2">
         <div class="col-4"></div>
         <div class="col-2"></div>

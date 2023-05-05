@@ -14,4 +14,7 @@ export class SectionCommentsComponent {
   @Input() section_id: any = '';
   @Output() close: EventEmitter<any> = new EventEmitter<any>();
 
+  closeIt() {
+    this.close.emit('N');
+  }
 }
