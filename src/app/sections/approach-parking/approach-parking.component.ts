@@ -7,11 +7,13 @@ import { SectionCommentsComponent } from '../section-comments/section-comments.c
 import { SectionPhotosComponent } from '../section-photos/section-photos.component';
 import { SectionSaaComponent } from '../section-saa/section-saa.component';
 import { SectionDocumentsComponent } from '../section-documents/section-documents.component';
+import { UploadPhotoComponent } from 'src/app/components/upload-photo/upload-photo.component';
+import { UploadDocumentComponent } from 'src/app/components/upload-document/upload-document.component';
 
 @Component({
   selector: 'app-approach-parking',
   standalone: true,
-  imports: [CommonModule, SectionPanelComponent, SectionCommentsComponent, SectionPhotosComponent, SectionSaaComponent, SectionDocumentsComponent],
+  imports: [CommonModule, SectionPanelComponent, SectionCommentsComponent, SectionPhotosComponent, SectionSaaComponent, SectionDocumentsComponent, UploadPhotoComponent, UploadDocumentComponent],
   templateUrl: './approach-parking.component.html',
   styleUrls: ['./approach-parking.component.css']
 })

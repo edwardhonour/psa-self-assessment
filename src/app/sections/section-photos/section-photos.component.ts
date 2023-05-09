@@ -12,6 +12,7 @@ import { UploadPhotoComponent } from 'src/app/components/upload-photo/upload-pho
 export class SectionPhotosComponent implements OnInit {
    @Input() survey_id: any = '';
    @Input() section_id: any = '';
+   @Input() asset_id: any = 0;
    @Input() data: any;
 
    @Output() close: EventEmitter<any> = new EventEmitter<any>();

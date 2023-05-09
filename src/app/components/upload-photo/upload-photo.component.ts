@@ -60,6 +60,7 @@ export class UploadPhotoComponent  {
   progress: number = 0;
   uid: any;
   dsc: any;
+  photo_name: any = '';
   
   ngOnDestroy(): void
   {
@@ -83,6 +84,7 @@ export class UploadPhotoComponent  {
       section_id: this.section_id,
       option_id: this.option_id,
       asset_id: this.asset_id,
+      photo_name: this.photo_name,
       dsc: this.dsc,
       uid: this.uid
     }
