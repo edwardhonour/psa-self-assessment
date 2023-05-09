@@ -1,58 +1,85 @@
 <div class="card" style="margin-top:20px;">
     <div class="card-header">
-        <h2>Section Critical Areas</h2>
+        <div class="row" style="width:95%">
+            <div class="col-10">
+                <div style="font-size:18px;">Section Areas & Assets</div>
+            </div>
+            <div class="col-2" style="text-align: right;">
+                <div (click)="toggleAdd()" class="btn btn-primary">
+                    <i class="bi bi-clipboard2-plus"></i>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="card-body">
-        <div class="row">
-            <div class="col-5">
+        <div *ngIf="adding=='Y'" class="row">
+            <div class="col-12">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    <input [(ngModel)]="saa_name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
                   </div>
                   <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Description:</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+                    <textarea [(ngModel)]="text" class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
                   </div>
                   <div class="mb-3">
-                  <select class="form-select">
+                    <p>Area/Asset Type</p>
+                  <select [(ngModel)]="saa_type" class="form-select">
                     <option selected>Select Area/Asset Type</option>
-                    <option value="1">Perimeter Fence</option>
-                    <option value="1">Vehicle Entrance to Campus</option>
-                    <option value="1">Vehicle Gate</option>
-                    <option value="1">Avenue of Approach</option>
-                    <option value="2">Pedestrian Entrance to Campus</option>
-                    <option value="3">Student Dropoff / Bus</option>
-                    <option value="4">Student Dropoff / Auto</option>
-                    <option value="5">Building Entrance</option>
-                    <option value="6">Delivery Area / Dock</option>
-                    <option value="7">Outdoor Playground</option>
-                    <option value="8">Outdoor Gym Area</option>
-                    <option value="9">Outdoor Sports / Event Facility</option>
-                    <option value="8">Indoor Gym Area</option>
-                    <option value="9">Indoor Sports / Event Facility</option>
-                    <option value="8">Indoor Assembly Area</option>
-                    <option value="1">Exterior Door</option>
-                    <option value="1">Interior Door</option>
-                    <option value="1">Exterior Window</option>
-                    <option value="1">Interior Window</option>
-                    <option value="1">Access Control System (ID Actuated)</option>
-                    <option value="1">Magnetometer</option>
-                    <option value="1">Video Surveillance System</option>
-                    <option value="1">Fire Alarm</option>
-                    <option value="1">Panic Button</option>
+                    <option value="Perimeter Fence">Perimeter Fence</option>
+                    <option value="Vehicle Entrance to Campus">Vehicle Entrance to Campus</option>
+                    <option value="Vehicle Gate">Vehicle Gate</option>
+                    <option value="Avenue of Approach">Avenue of Approach</option>
+                    <option value="Pedestrian Entrance to Campus">Pedestrian Entrance to Campus</option>
+                    <option value="Student Dropoff / Bus">Student Dropoff / Bus</option>
+                    <option value="Student Dropoff / Auto">Student Dropoff / Auto</option>
+                    <option value="Building Entrance">Building Entrance</option>
+                    <option value="Delivery Area / Dock">Delivery Area / Dock</option>
+                    <option value="Outdoor Playground">Outdoor Playground</option>
+                    <option value="Outdoor Gym Area">Outdoor Gym Area</option>
+                    <option value="Outdoor Sports / Event Facility">Outdoor Sports / Event Facility</option>
+                    <option value="Indoor Gym Area">Indoor Gym Area</option>
+                    <option value="Indoor Sports / Event Facility">Indoor Sports / Event Facility</option>
+                    <option value="Indoor Assembly Area">Indoor Assembly Area</option>
+                    <option value="Exterior Door">Exterior Door</option>
+                    <option value="Interior Door">Interior Door</option>
+                    <option value="Exterior Window">Exterior Window</option>
+                    <option value="Interior Window">Interior Window</option>
+                    <option value="Access Control System (ID Actuated)">Access Control System (ID Actuated)</option>
+                    <option value="Magnetometer">Magnetometer</option>
+                    <option value="Video Surveillance System">Video Surveillance System</option>
+                    <option value="Fire Alarm">Fire Alarm</option>
+                    <option value="Panic Button">Panic Button</option>
                   </select>
                   </div>
+                  <div class="row">
+                    <div class="col-12" style="text-align: right;">
+                        <button (click)="toggleAdd()" class="btn btn-secondary">Cancel</button>
+                        <button style="margin-left:20px;" (click)="postForm()" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-7">
-                <h3>Existing Comments (this section)</h3>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h3>Existing Critical Areas / Assets (this section)</h3>
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Date/Time</th>
-                            <th>Uploaded By</th>
+                            <th>Asset/Area Name</th>
+                            <th>Type</th>
+                            <th>Added By</th>
                             <th></th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr *ngFor="let m of data.saa">
+                            <td>{{ m.create_timestamp }}</td>
+                            <td>{{ m.saa_name }}</td>
+                            <td>{{ m.full_name }}</td>
+                            <td><button class="btn btn-primary" (click)="edit(m)"><i class="bi bi-pencil-square"></i></button></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>

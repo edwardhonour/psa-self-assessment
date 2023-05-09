@@ -1,32 +1,60 @@
 <div class="card" style="margin-top:20px;">
     <div class="card-header">
-        <h2>Section Comments</h2>
+        <div class="row" style="width:95%">
+            <div class="col-10">
+                <div style="font-size:18px;">Section Comments</div>
+            </div>
+            <div class="col-2" style="text-align: right;">
+                <div (click)="toggleAdd()" class="btn btn-primary">
+                    <i class="bi bi-clipboard2-plus"></i>
+                </div>
+            </div>
+        </div>
+       
     </div>
     <div class="card-body">
-        <div class="row">
-            <div class="col-5">
+        <div *ngIf="adding=='Y'" class="row">
+            <div class="col-12">
                   <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Comment:</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+                    <textarea [(ngModel)]="text" class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
                   </div>
                   <div class="mb-3">
-                  <select class="form-select">
+                    <p>Comment Type:</p>
+                  <select [(ngModel)]="comment_type" class="form-select">
                     <option selected>Select Comment Type</option>
                     <option value="1">Include in Report</option>
                     <option value="2">Private Comment for Team</option>
                   </select>
                   </div>
+                  <div class="row">
+                    <div class="col-12" style="text-align: right;">
+                        <button (click)="toggleAdd()" class="btn btn-secondary">Cancel</button>
+                        <button style="margin-left:20px;" (click)="postForm()" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-7">
+        </div>
+        <div class="row">
+            <div class="col-12">
                 <h3>Existing Comments (this section)</h3>
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Date/Time</th>
-                            <th>Uploaded By</th>
-                            <th></th>
+                            <th>Date Time</th>                            
+                            <th>Comment</th>
+                            <th>Entered By</th>
+                            <th style="width:60px;"></th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr *ngFor="let m of data.comments">
+                            <td>{{ m.create_timestamp }}</td>
+                            <td>{{ m.text }}</td>
+                            <td>{{ m.full_name }}</td>
+                            <td><button class="btn btn-primary" (click)="edit(m)"><i class="bi bi-pencil-square"></i></button></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>

@@ -32,9 +32,15 @@ export class UploadDocumentComponent  {
   @HostListener('dragover', ['$event']) onDragOver(evt: any) { evt.preventDefault();  evt.stopPropagation(); }
   @HostListener('dragleave', ['$event']) public onDragLeave(evt: any) { evt.preventDefault(); evt.stopPropagation(); }
   @HostListener('drop', ['$event']) public ondrop(evt: any) { this.uploadFiles(); }
-  
-  @Input() workspace_id: any = '0';
+
+
+  @Input() survey_id: any = '0';
+  @Input() section_id: any = '0';
   @Input() document_id: any = '0';
+  @Input() option_id: any = '0';
+  @Input() asset_id: any = '0';
+  document_name: any = '';
+  dsc: any = '';
   
   constructor(
     private _activatedRoute: ActivatedRoute,
@@ -73,12 +79,16 @@ export class UploadDocumentComponent  {
     }
   
     let postData= {
-      workspace_id: this.workspace_id,
-      document_id: this.document_id,
-      uid: this.uid
+      uid: this.uid,
+      survey_id: this.survey_id,
+      section_id: this.section_id,
+      option_id: this.option_id,
+      asset_id: this.asset_id,
+      document_name: this.document_name,
+      dsc: this.dsc
     }
   
-    this.fileUploadService.upload(droppedFile, postData).subscribe((event: HttpEvent<any>) => {
+    this.fileUploadService.uploadDocument(droppedFile, postData).subscribe((event: HttpEvent<any>) => {
     switch (event.type) {
       case HttpEventType.Sent:
         console.log('Request has been made!');
@@ -86,7 +96,7 @@ export class UploadDocumentComponent  {
       case HttpEventType.ResponseHeader:
         console.log('Response header has been received!');
         setTimeout(() => {
-  location.reload();
+//  location.reload();
         }, 500);
         break;
       case HttpEventType.UploadProgress:

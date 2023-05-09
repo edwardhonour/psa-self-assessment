@@ -17,6 +17,13 @@
                             <th>Uploaded By</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr *ngFor="let m of data.photos">
+                            <td>{{ m.photo_name }}</td>
+                            <td>{{ m.create_timestamp }}</td>
+                            <td>{{ m.full_name }}</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
