@@ -79,6 +79,7 @@ export class SectionCommentsComponent  {
       console.log(formData);
       this._dataService.postForm("post-section-comment", formData).subscribe((data:any)=>{
 //        this.data=data;
+location.reload()
        });
     }
 

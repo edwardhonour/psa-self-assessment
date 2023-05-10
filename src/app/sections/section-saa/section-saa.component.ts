@@ -83,6 +83,7 @@ export class SectionSaaComponent  {
       console.log(formData);
       this._dataService.postForm("post-section-saa", formData).subscribe((data:any)=>{
 //        this.data=data;
+        location.reload();
        });
     }
 

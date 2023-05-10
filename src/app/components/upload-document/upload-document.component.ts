@@ -96,7 +96,7 @@ export class UploadDocumentComponent  {
       case HttpEventType.ResponseHeader:
         console.log('Response header has been received!');
         setTimeout(() => {
-//  location.reload();
+  location.reload();
         }, 500);
         break;
       case HttpEventType.UploadProgress:
