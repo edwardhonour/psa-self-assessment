@@ -39,7 +39,11 @@ export class UploadDocumentComponent  {
   @Input() document_id: any = '0';
   @Input() option_id: any = '0';
   @Input() asset_id: any = '0';
+  @Input()  data: any; 
+  
   document_name: any = '';
+  document_type: any = '';
+
   dsc: any = '';
   
   constructor(
@@ -51,7 +55,7 @@ export class UploadDocumentComponent  {
   ) { }
   
   public uploadedFiles: Array<File> = [];
-  data: any; 
+
   uploading: any = 'N';
   adding: any = 'N';
   version: any = 'N';
@@ -84,6 +88,7 @@ export class UploadDocumentComponent  {
       section_id: this.section_id,
       option_id: this.option_id,
       asset_id: this.asset_id,
+      document_type: this.document_type,
       document_name: this.document_name,
       dsc: this.dsc
     }
@@ -96,7 +101,7 @@ export class UploadDocumentComponent  {
       case HttpEventType.ResponseHeader:
         console.log('Response header has been received!');
         setTimeout(() => {
-  location.reload();
+            location.reload();
         }, 500);
         break;
       case HttpEventType.UploadProgress:

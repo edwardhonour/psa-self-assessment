@@ -24,8 +24,8 @@
       </div>
   </div>
     <app-section-comments *ngIf="show_comments=='Y'" [data]="data" [survey_id]="org_id" [section_id]="'50'" (close)="closeAll()"></app-section-comments>
-    <app-section-documents *ngIf="show_documents=='Y'" [survey_id]="org_id" [section_id]="'50'" (close)="closeAll()"></app-section-documents>
+    <app-section-documents *ngIf="show_documents=='Y'" [data]="data"  [survey_id]="org_id" [section_id]="'50'" (close)="closeAll()"></app-section-documents>
     <app-section-photos *ngIf="show_photos=='Y'" [data]="data" [survey_id]="org_id" [section_id]="'50'" (close)="closeAll()"></app-section-photos>
     <app-section-saa *ngIf="show_saa=='Y'" [data]="data" [survey_id]="org_id" [section_id]="'50'" (close)="closeAll()"></app-section-saa>
-    <app-section-panel [survey_id]="org_id" [section_id]="'50'"></app-section-panel>
+    <app-section-panel  *ngIf="show_comments!='Y'&&show_documents!='Y'&&show_photos!='Y'&&show_saa!='Y'" [survey_id]="org_id" [section_id]="'50'"></app-section-panel>
 </div>

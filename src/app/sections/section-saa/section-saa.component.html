@@ -26,30 +26,7 @@
                     <p>Area/Asset Type</p>
                   <select [(ngModel)]="saa_type" class="form-select">
                     <option selected>Select Area/Asset Type</option>
-                    <option value="Perimeter Fence">Perimeter Fence</option>
-                    <option value="Vehicle Entrance to Campus">Vehicle Entrance to Campus</option>
-                    <option value="Vehicle Gate">Vehicle Gate</option>
-                    <option value="Avenue of Approach">Avenue of Approach</option>
-                    <option value="Pedestrian Entrance to Campus">Pedestrian Entrance to Campus</option>
-                    <option value="Student Dropoff / Bus">Student Dropoff / Bus</option>
-                    <option value="Student Dropoff / Auto">Student Dropoff / Auto</option>
-                    <option value="Building Entrance">Building Entrance</option>
-                    <option value="Delivery Area / Dock">Delivery Area / Dock</option>
-                    <option value="Outdoor Playground">Outdoor Playground</option>
-                    <option value="Outdoor Gym Area">Outdoor Gym Area</option>
-                    <option value="Outdoor Sports / Event Facility">Outdoor Sports / Event Facility</option>
-                    <option value="Indoor Gym Area">Indoor Gym Area</option>
-                    <option value="Indoor Sports / Event Facility">Indoor Sports / Event Facility</option>
-                    <option value="Indoor Assembly Area">Indoor Assembly Area</option>
-                    <option value="Exterior Door">Exterior Door</option>
-                    <option value="Interior Door">Interior Door</option>
-                    <option value="Exterior Window">Exterior Window</option>
-                    <option value="Interior Window">Interior Window</option>
-                    <option value="Access Control System (ID Actuated)">Access Control System (ID Actuated)</option>
-                    <option value="Magnetometer">Magnetometer</option>
-                    <option value="Video Surveillance System">Video Surveillance System</option>
-                    <option value="Fire Alarm">Fire Alarm</option>
-                    <option value="Panic Button">Panic Button</option>
+                    <option *ngFor="let m of data.saa_types" value="m.id">{{ m.options }}</option>
                   </select>
                   </div>
                   <div class="row">

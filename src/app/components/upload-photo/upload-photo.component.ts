@@ -40,7 +40,8 @@ export class UploadPhotoComponent  {
   @Input() section_id: any = '0';
   @Input() option_id: any = '0';
   @Input() asset_id: any = '0';
-
+  @Input() data: any;
+  
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _router: Router, 
@@ -50,7 +51,7 @@ export class UploadPhotoComponent  {
   ) { }
   
   public uploadedFiles: Array<File> = [];
-  data: any; 
+
   uploading: any = 'N';
   adding: any = 'N';
   version: any = 'N';
@@ -61,7 +62,8 @@ export class UploadPhotoComponent  {
   uid: any;
   dsc: any;
   photo_name: any = '';
-  
+  photo_type: any = '';
+
   ngOnDestroy(): void
   {
    //--   this._unsubscribeAll.next(null);
@@ -85,6 +87,7 @@ export class UploadPhotoComponent  {
       option_id: this.option_id,
       asset_id: this.asset_id,
       photo_name: this.photo_name,
+      photo_type: this.photo_type,
       dsc: this.dsc,
       uid: this.uid
     }
@@ -97,7 +100,7 @@ export class UploadPhotoComponent  {
       case HttpEventType.ResponseHeader:
         console.log('Response header has been received!');
         setTimeout(() => {
-  location.reload();
+//  location.reload();
         }, 500);
         break;
       case HttpEventType.UploadProgress:

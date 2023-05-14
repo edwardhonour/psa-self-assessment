@@ -16,11 +16,22 @@ export class SectionDocumentsComponent implements OnInit {
   @Input() option_id: any = 0;
   @Input() data: any;
 
+  uploading: any = 'N';
+
+
   @Output() close: EventEmitter<any> = new EventEmitter<any>();
   
   closeIt() {
    this.close.emit('N');
  }
+
+ toggleUpload() {
+  if (this.uploading=='Y') {
+    this.uploading='N';
+  } else {
+    this.uploading='Y';
+  }
+}
 
  ngOnInit(): void {
      console.log('Section Photos') 

@@ -10,16 +10,7 @@
                 <h1>Assessment Survey</h1>
                 <h2 class="mt-2">{{ data?.formData?.org_name }}</h2>
             </div>   
-        </div>
-        <div class="row card card-body m-3">
-            <div class="row">
-                <div class="col-6">
-                    <button class="btn btn-secondary" (click)="toggleInviteT()">Invite Team</button>
-                </div>           
-                <div class="col-6" style="text-align: right;">
-                </div>
-            </div>
-        </div>          
+        </div>       
         <div class="row p-3">
             <div class="col-3">
                 <div class="card card-body">
@@ -35,7 +26,7 @@
                         <li #row id="80">Entry Controls</li>
                         <li #row id="90">Security / Response Planning</li>                        
                         <li #row id="100">Emergency Response</li>
-                        <li #row id="110">Security Force & Staffing</li>
+                        <li #row id="110" [innerHTML]="'Security Force / Staffing'"></li>
                         <li #row id="120">Incident History</li>
                         <li #row id="130">Likely Threats</li>
                         <li #row id="140">Electronic Security Systems</li>
@@ -112,4 +103,5 @@
             <span class="font-medium text-secondary">SQLLabs Inc. &copy; 2023</span>
     </div>
     </div>
+    <span style="font-size:10px;">app/features/survey</span>
     

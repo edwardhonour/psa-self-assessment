@@ -14,6 +14,13 @@
                 <input type="text" [(ngModel)]="document_name" class="form-control" id="exampleFormControlInput1">
               </div>
               <div class="mb-3">
+                <p>Category</p>
+              <select [(ngModel)]="document_type" class="form-select">
+                <option selected>Select Category</option>
+                <option *ngFor="let m of data.document_types" value="{{ m.id }}">{{ m.options }}</option>
+              </select>
+              </div>
+              <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Description</label>
                 <textarea [(ngModel)]="dsc" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
               </div>

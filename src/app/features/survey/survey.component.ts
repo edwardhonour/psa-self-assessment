@@ -167,63 +167,63 @@ export class SurveyComponent  {
             this.utilities='N'; 
             this.emergency='N';      
             if (this.data.section_id=='10') { 
-                 this.section_code='GENERAL-10';
+                 this.section_code='10';
                  this.general='Y';
             }
             if (this.data.section_id=='20') { 
-              this.section_code='POPULATION-20';
+              this.section_code='20';
               this.population='Y';
             }
            if (this.data.section_id=='30') { 
-               this.section_code='TRANSPORTATION-30';
+               this.section_code='30';
                this.transportation='Y';
            }
            if (this.data.section_id=='40') { 
-              this.section_code='PERIMETER-40';
+              this.section_code='40';
               this.perimeter='Y';
           }
          if (this.data.section_id=='50') { 
-              this.section_code='APPROACH-50';
+              this.section_code='50';
               this.approach='Y';
         }
         if (this.data.section_id=='60') { 
-              this.section_code='OUTDOOR-60';
+              this.section_code='60';
               this.outdoor='Y';
         }
         if (this.data.section_id=='70') { 
-              this.section_code='ENVELOPE-70';
+              this.section_code='70';
               this.envelope='Y';
         }
         if (this.data.section_id=='80') { 
-              this.section_code='ENTRYCONTROL-80';
+              this.section_code='80';
               this.entrycontrol='Y';
         }
         if (this.data.section_id=='90') { 
-              this.section_code='SRP-90';
+              this.section_code='90';
               this.srp='Y';
         }
         if (this.data.section_id=='100') { 
-              this.section_code='RESPONSE-100';
+              this.section_code='100';
               this.response='Y';
         }
         if (this.data.section_id=='110') { 
-              this.section_code='STAFFING-110';
+              this.section_code='110';
               this.staffing='Y';
         }
         if (this.data.section_id=='120') { 
-              this.section_code='INCIDENTS-120';
+              this.section_code='120';
               this.incidents='Y';
         }
         if (this.data.section_id=='130') { 
-              this.section_code='THREAT-10';
+              this.section_code='120';
               this.threat='Y';
         }
         if (this.data.section_id=='140') { 
-            this.section_code='ESS-140';
+            this.section_code='140';
             this.ess='Y';
         }          
         if (this.data.section_id=='150') { 
-            this.section_code='CYBER-150';
+            this.section_code='150';
             this.cyber='Y';
         }                
             console.log(this.data);
