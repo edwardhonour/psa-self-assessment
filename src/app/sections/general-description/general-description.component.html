@@ -23,18 +23,22 @@
             <button (click)="togglePhotos()" class="btn btn-primary">Photos ({{ data?.photos.length }})</button>
             <button (click)="toggleDocuments()" style="margin-left: 20px;" class="btn btn-primary">Documents ({{ data?.documents.length }})</button>
             <button (click)="toggleComments()" style="margin-left: 20px;" class="btn btn-primary">Comments ({{ data?.comments.length }})</button>            
- <!--           <button (click)="toggleSaa()" style="margin-left: 20px;" class="btn btn-primary">Critical Areas ({{ data?.saa.length }})</button>   -->
+            <button (click)="toggleSaa()" style="margin-left: 20px;" class="btn btn-primary">Participants ({{ data?.participants.length }})</button>   
       </div>
   </div>
       <app-section-comments *ngIf="show_comments=='Y'" [data]="data" [survey_id]="org_id" [section_id]="'10'" (close)="closeAll()"></app-section-comments>
       <app-section-documents *ngIf="show_documents=='Y'" [data]="data"  [survey_id]="org_id" [section_id]="'10'" (close)="closeAll()"></app-section-documents>
       <app-section-photos *ngIf="show_photos=='Y'" [data]="data" [survey_id]="org_id" [section_id]="'10'" (close)="closeAll()"></app-section-photos>
-      <app-section-saa *ngIf="show_saa=='Y'" [data]="data" [survey_id]="org_id" [section_id]="'10'" (close)="closeAll()"></app-section-saa>
+      <app-section-participants *ngIf="show_saa=='Y'" [data]="data" [survey_id]="org_id" (close)="closeAll()"></app-section-participants>
         <div  *ngIf="show_comments!='Y'&&show_documents!='Y'&&show_photos!='Y'&&show_saa!='Y'" class="card card-body mt-2">
           <div class="mb-3" style="color: black">
               <label style="color: black" for="exampleFormControlInput1" class="form-label">School Name</label>
               <input type="text" [(ngModel)]="data.formData.school_name" class="form-control" id="exampleFormControlInput1" placeholder="">
             </div>
+            <div class="mb-3" style="color: black">
+              <label style="color: black" for="exampleFormControlInput1" class="form-label">District Name</label>
+              <input type="text" [(ngModel)]="data.formData.district_name" class="form-control" id="exampleFormControlInput1" placeholder="">
+            </div>            
             <div class="mb-3">
               <label style="color: black" for="exampleFormControlInput1" class="form-label">Physical Address</label>
               <input type="text" [(ngModel)]="data.formData.delivery_address"  class="form-control" id="exampleFormControlInput1" placeholder="">
@@ -56,7 +60,50 @@
               <label style="color: black" for="exampleFormControlInput1" class="form-label">Zip</label>
               <input type="text" [(ngModel)]="data.formData.zip"  class="form-control" id="exampleFormControlInput1" placeholder="">
           </div>
-          </div>                              
+          </div>    
+          <div class="row mb-3">
+            <div class="mb-3">
+              <label style="color: black" for="exampleFormControlInput1" class="form-label">School Administrator</label>
+              <input type="text" [(ngModel)]="data.formData.school_administrator_name"  class="form-control" id="exampleFormControlInput1" placeholder="">
+            </div>
+          </div>   
+          <div class="row mb-3">
+            <div class="col-4">
+                    <label style="color: black" for="exampleFormControlInput1" class="form-label">Grades Served</label>
+                    <input type="text" [(ngModel)]="data.formData.grades_served"  class="form-control" id="exampleFormControlInput1" placeholder="">
+            </div>
+            <div class="col-4">
+                <label style="color: black" for="exampleFormControlInput1" class="form-label">Student Count</label>
+                <input type="text" [(ngModel)]="data.formData.student_count"  class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+        <div class="col-4">
+            <label style="color: black" for="exampleFormControlInput1" class="form-label">Faculty Count</label>
+            <input type="text" [(ngModel)]="data.formData.faculty_county"  class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+        </div>    
+        <div class="row mb-3">
+          <div class="col-4">
+                  <label style="color: black" for="exampleFormControlInput1" class="form-label">Other Staff Count</label>
+                  <input type="text" [(ngModel)]="data.formData.staff_count"  class="form-control" id="exampleFormControlInput1" placeholder="">
+          </div>
+          <div class="col-4">
+              <label style="color: black" for="exampleFormControlInput1" class="form-label">Number of Buildings</label>
+              <input type="text" [(ngModel)]="data.formData.building_count"  class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+      <div class="col-4">
+          <label style="color: black" for="exampleFormControlInput1" class="form-label">Year Built</label>
+          <input type="text" [(ngModel)]="data.formData.year_built"  class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+      </div>   
+
+      <div class="row mb-3">
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+        <div class="col-4">
+            <button class="btn btn-primary" (click)="postForm()">Save Changes</button>
+        </div>
+    </div>  
+
           </div>
         <app-section-panel *ngIf="show_comments!='Y'&&show_documents!='Y'&&show_photos!='Y'&&show_saa!='Y'" [survey_id]="org_id" [section_id]="'10'"></app-section-panel>
     </div>

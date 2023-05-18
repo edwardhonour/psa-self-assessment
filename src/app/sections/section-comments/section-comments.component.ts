@@ -15,11 +15,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpEvent, HttpEventType } from '@angular/common/http';
+import { SectionBackgroundComponent } from 'src/app/components/section-background/section-background.component';
 
 @Component({
   selector: 'app-section-comments',
   standalone: true,
-  imports: [CommonModule, Ng2SearchPipeModule, MatRadioModule, NgxTablePaginationModule, RouterModule, FormsModule,  
+  imports: [CommonModule, SectionBackgroundComponent, Ng2SearchPipeModule, MatRadioModule, NgxTablePaginationModule, RouterModule, FormsModule,  
     SqlComponentsModule, SqlMenuComponent, FileUploadModule, HttpClientModule],
   templateUrl: './section-comments.component.html',
   styleUrls: ['./section-comments.component.css']

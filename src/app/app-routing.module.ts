@@ -29,6 +29,8 @@ import { DocumentShareListComponent } from './features/documents/document-share-
 import { AdminOrgListComponent } from './features/organizations/admin-org-list/admin-org-list.component';
 import { SurveyComponent } from './features/survey/survey.component';
 import { GettingStartedComponent } from './pages/getting-started/getting-started.component';
+import { PhotoListComponent } from './features/photo-list/photo-list.component';
+import { CommentListComponent } from './features/comment-list/comment-list.component';
 
 const routes: Routes = [
   { path: '', component: NewSigninComponent },
@@ -36,6 +38,9 @@ const routes: Routes = [
   { path: 'workspaces', component: DocWorkspaceListComponent },
   { path: 'orgs', component: AdminOrgListComponent, resolve: { data: DataResolver }},
   { path: 'settings', component: SettingsComponent, resolve: { data: DataResolver }},
+  { path: 'photos', component: PhotoListComponent, resolve: { data: DataResolver }},
+  { path: 'documents', component: DocumentListComponent, resolve: { data: DataResolver }},
+  { path: 'comments', component: CommentListComponent, resolve: { data: DataResolver }},
   { path: 'getting-started', component: GettingStartedComponent },
   { path: 'verify', component: VerifyDocComponent, resolve: { data: DataResolver }},
   { path: 'documents', component: DocumentListComponent, resolve: { data: DataResolver }  },

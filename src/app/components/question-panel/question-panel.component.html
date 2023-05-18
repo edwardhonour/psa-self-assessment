@@ -3,15 +3,18 @@
     <mat-card *ngIf="data?.question.option_type=='Radio Group'" style="margin-bottom: 20px;">
         <div class="row">
             <div class="col-12 p-1" style="text-align: right;">
-                <button class="btn btn-primary" style="margin-left:20px;"><i class="bi bi-chat-square-text"></i></button>
-                <button class="btn btn-primary" style="margin-left:20px; margin-right:20px;"><i class="bi bi-camera"></i></button>
+                <button (click)="showComments()" *ngIf="data.question.allow_comment=='Y'&&data.comments.length==0"  class="btn btn-primary" style="margin-left:20px;"><i class="bi bi-chat-square-text"></i></button>
+                <button (click)="showComments()" *ngIf="data.question.allow_comment=='Y'&&data.comments.length!=0"  class="btn btn-success" style="margin-left:20px;"><i class="bi bi-chat-square-text"></i></button>
+                <button (click)="showPhotos()" *ngIf="data.question.allow_photo=='Y'&&showingphotos=='N'" class="btn btn-primary" style="margin-left:20px; margin-right:20px;"><i class="bi bi-camera"></i></button>
             </div>
         </div>
+        <app-upload-option-photo (close)="hidePhotos()" *ngIf="showingphotos=='Y'" [survey_id]="survey_id" [section_id]="data.question.section_id" [option_id]="data.question.id" [asset_id]="data.question.asset_id" [data]="data"></app-upload-option-photo>
+        <app-upload-option-comments (close)="hideComments()" *ngIf="showingcomments=='Y'" [survey_id]="survey_id" [section_id]="data.question.section_id" [option_id]="data.question.id" [asset_id]="data.question.asset_id" [data]="data"></app-upload-option-comments>
         <mat-card-title style="padding:20px; font-size: 18px;">
             <span style="font-size: 16px!important;">{{ data.question.option_text }}</span>
         </mat-card-title>
         <mat-card-content>
-            <mat-radio-group (change)="primaryRadioChange(data?.question.option_id)" [(ngModel)]="data?.formData[data?.question.model]">
+           <mat-radio-group (change)="primaryRadioChange(data?.question.option_id)" [(ngModel)]="data?.formData[data?.question.model]">
                 <ng-container *ngFor="let m of data.options">
                     <div *ngIf="m.option_type=='Radio Button'" class="row">
                         <div class="col-sm-2"></div>
@@ -25,11 +28,14 @@
     <mat-card *ngIf="data?.question.option_type=='Checkbox Group'"  style="margin-bottom: 20px;">
         <div class="row">
             <div class="col-12 p-1" style="text-align: right;">
-                <button class="btn btn-primary" style="margin-left:20px;"><i class="bi bi-chat-square-text"></i></button>
-                <button class="btn btn-primary" style="margin-left:20px; margin-right:20px;"><i class="bi bi-camera"></i></button>
+                <button (click)="showComments()" *ngIf="data.question.allow_comment=='Y'&&data.comments.length==0"  class="btn btn-primary" style="margin-left:20px;"><i class="bi bi-chat-square-text"></i></button>
+                <button (click)="showComments()" *ngIf="data.question.allow_comment=='Y'&&data.comments.length!=0"  class="btn btn-success" style="margin-left:20px;"><i class="bi bi-chat-square-text"></i></button>
+                <button (click)="showPhotos()" *ngIf="data.question.allow_photo=='Y'&&showingphotos=='N'" class="btn btn-primary" style="margin-left:20px; margin-right:20px;"><i class="bi bi-camera"></i></button>
             </div>
         </div>
-        <mat-card-title  style="padding:20px; font-size: 18px;"><span style="font-size: 16px!important;">{{ data.question.option_text }}</span></mat-card-title>
+        <app-upload-option-photo (close)="hidePhotos()" *ngIf="showingphotos=='Y'" [survey_id]="survey_id" [section_id]="data.question.section_id" [option_id]="data.question.id" [asset_id]="data.question.asset_id" [data]="data"></app-upload-option-photo>
+        <app-upload-option-comments (close)="hideComments()" *ngIf="showingcomments=='Y'" [survey_id]="survey_id" [section_id]="data.question.section_id" [option_id]="data.question.id" [asset_id]="data.question.asset_id" [data]="data"></app-upload-option-comments>
+         <mat-card-title  style="padding:20px; font-size: 18px;"><span style="font-size: 16px!important;">{{ data.question.option_text }}</span></mat-card-title>
         <mat-card-content>
                 <ng-container *ngFor="let m of data.options">
                     <div *ngIf="m.option_type=='Checkbox'" class="row">

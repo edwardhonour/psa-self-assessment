@@ -11,10 +11,13 @@ import { NgxTablePaginationModule } from 'ngx-table-pagination';
 
 import { MatRadioModule } from '@angular/material/radio';
 import { MaterialModule } from 'src/app/material/material.module';
+import { UploadOptionPhotoComponent } from '../upload-option-photo/upload-option-photo.component';
+import { SectionCommentsComponent } from 'src/app/sections/section-comments/section-comments.component';
+import { UploadOptionCommentsComponent } from '../upload-option-comments/upload-option-comments.component';
 @Component({
   selector: 'app-question-panel',
   standalone: true,
-  imports: [ CommonModule, MaterialModule, MatRadioModule, FormsModule],
+  imports: [ CommonModule, MaterialModule, MatRadioModule, FormsModule, UploadOptionPhotoComponent, SectionCommentsComponent, UploadOptionCommentsComponent],
   templateUrl: './question-panel.component.html',
   styleUrls: ['./question-panel.component.css']
 })
@@ -27,6 +30,8 @@ export class QuestionPanelComponent implements OnChanges, OnInit {
   data: any;
   panel_open: any = 'N';
   primary_value: any;
+  showingphotos: any = 'N';
+  showingcomments: any = 'N';
 
   ngOnInit(): void {
     this.level++;
@@ -58,6 +63,23 @@ export class QuestionPanelComponent implements OnChanges, OnInit {
   clearOtherRadioButtons(id: any) {
 
   }
+
+  showPhotos() {
+      this.showingphotos='Y';
+  }
+
+  hidePhotos() {
+    this.showingphotos='N';
+}
+
+showComments() {
+  this.showingcomments='Y';
+}
+
+hideComments() {
+    this.showingcomments='N';
+}
+
 
   updateItem(inputArray: any, item: any){
   

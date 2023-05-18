@@ -8,11 +8,13 @@ import { SectionCommentsComponent } from '../section-comments/section-comments.c
 import { SectionPhotosComponent } from '../section-photos/section-photos.component';
 import { SectionSaaComponent } from '../section-saa/section-saa.component';
 import { SectionDocumentsComponent } from '../section-documents/section-documents.component';
+import { SectionBackgroundComponent } from 'src/app/components/section-background/section-background.component';
+import { SectionParticipantsComponent } from 'src/app/components/section-participants/section-participants.component';
 
 @Component({
   selector: 'app-general-description',
   standalone: true,
-  imports: [CommonModule, SectionPanelComponent, SectionCommentsComponent, SectionPhotosComponent, SectionSaaComponent, SectionDocumentsComponent, FormsModule],
+  imports: [CommonModule, SectionBackgroundComponent, SectionParticipantsComponent, SectionPanelComponent, SectionCommentsComponent, SectionPhotosComponent, SectionSaaComponent, SectionDocumentsComponent, FormsModule],
   templateUrl: './general-description.component.html',
   styleUrls: ['./general-description.component.css']
 })
@@ -82,6 +84,12 @@ export class GeneralDescriptionComponent implements OnInit {
     }
   }
 
+  postForm() {
+    this._dataService.postForm("post-general-description", this.data.formData).subscribe((data:any)=>{
+//        this.data=data;
+location.reload()
+     });
+  }
 
 
   constructor(private _dataService: DataService) {

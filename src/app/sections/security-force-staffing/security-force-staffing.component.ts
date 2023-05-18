@@ -7,11 +7,12 @@ import { SectionCommentsComponent } from '../section-comments/section-comments.c
 import { SectionPhotosComponent } from '../section-photos/section-photos.component';
 import { SectionSaaComponent } from '../section-saa/section-saa.component';
 import { SectionDocumentsComponent } from '../section-documents/section-documents.component';
+import { SectionBackgroundComponent } from 'src/app/components/section-background/section-background.component';
 
 @Component({
   selector: 'app-security-force-staffing',
   standalone: true,
-  imports: [CommonModule, SectionPanelComponent, SectionCommentsComponent, SectionPhotosComponent, SectionSaaComponent, SectionDocumentsComponent],
+  imports: [CommonModule, SectionBackgroundComponent, SectionPanelComponent, SectionCommentsComponent, SectionPhotosComponent, SectionSaaComponent, SectionDocumentsComponent],
   templateUrl: './security-force-staffing.component.html',
   styleUrls: ['./security-force-staffing.component.css']
 })

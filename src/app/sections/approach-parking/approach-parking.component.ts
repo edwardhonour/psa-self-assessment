@@ -9,11 +9,12 @@ import { SectionSaaComponent } from '../section-saa/section-saa.component';
 import { SectionDocumentsComponent } from '../section-documents/section-documents.component';
 import { UploadPhotoComponent } from 'src/app/components/upload-photo/upload-photo.component';
 import { UploadDocumentComponent } from 'src/app/components/upload-document/upload-document.component';
+import { SectionBackgroundComponent } from 'src/app/components/section-background/section-background.component';
 
 @Component({
   selector: 'app-approach-parking',
   standalone: true,
-  imports: [CommonModule, SectionPanelComponent, SectionCommentsComponent, SectionPhotosComponent, SectionSaaComponent, SectionDocumentsComponent, UploadPhotoComponent, UploadDocumentComponent],
+  imports: [CommonModule, SectionBackgroundComponent, SectionPanelComponent, SectionCommentsComponent, SectionPhotosComponent, SectionSaaComponent, SectionDocumentsComponent, UploadPhotoComponent, UploadDocumentComponent],
   templateUrl: './approach-parking.component.html',
   styleUrls: ['./approach-parking.component.css']
 })
