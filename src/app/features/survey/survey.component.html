@@ -14,23 +14,7 @@
         <div class="row p-3">
             <div class="col-3">
                 <div class="card card-body">
-                    <h2>Main Menu</h2>
-                    <sql-menu (menuClick)="processClick($event);" [active]="section_code">
-                        <li #row id="10">General Description</li>
-      <!--                  <li #row id="20">Student Population</li> -->
-                        <li #row id="30">Student Transportation</li>
-                        <li #row id="40">Perimeter Security</li>
-                        <li #row id="60">Outdoor Areas</li>
-                        <li #row id="70">Building Envelope</li>
-                        <li #row id="80">Entry Controls</li>
-                        <li #row id="90">Security / Response Planning</li>                        
-                        <li #row id="100">Emergency Response</li>
-                        <li #row id="110" [innerHTML]="'Security Force / Staffing'"></li>
-                        <li #row id="120">Incident History</li>
-                        <li #row id="130">Likely Threats</li>
-                        <li #row id="140">Electronic Security Systems</li>
-                        <li #row id="150">Cyber Security</li>
-                    </sql-menu>
+                    <app-assessment-menu (menuClick)="processClick($event);" [active]="section_code"></app-assessment-menu>
                 </div>
             </div>
     
@@ -82,6 +66,20 @@
                     <app-general-description [org_id]="org_id" *ngIf="this.general=='Y'"></app-general-description>
                     <app-student-population [org_id]="org_id" *ngIf="this.population=='Y'" ></app-student-population>
 <!--                    <app-student-transportation [org_id]="org_id" *ngIf="this.transportation=='Y'"></app-student-transportation> -->
+<ng-container *ngFor="let m of data.sections">
+    <app-section-template 
+    [org_id]="org_id" 
+    [template_id]="'0'" 
+    [section_id]="m.id" 
+    [include_background]="m.include_background"
+    [include_comments]="m.include_comments"
+    [include_documents]="m.include_documents"
+    [include_saa]="m.include_saa"
+    [include_photos]="m.include_photos" 
+    *ngIf="this.section_code==m.id"
+    ></app-section-template>    
+</ng-container>
+<!--
                     <app-section-template 
                         [org_id]="org_id" 
                         [template_id]="'0'" 
@@ -105,6 +103,7 @@
                     <app-likely-threats [org_id]="org_id" *ngIf="this.threat=='Y'" ></app-likely-threats>
                     <app-electronic-security-systems [org_id]="org_id" *ngIf="this.ess=='Y'"></app-electronic-security-systems>
                     <app-cyber-security [org_id]="org_id" *ngIf="this.cyber=='Y'"></app-cyber-security>            
+-->
                 </div>
             </div>   
     </div>
