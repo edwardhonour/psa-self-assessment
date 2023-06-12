@@ -26,6 +26,7 @@
   <app-section-comments *ngIf="show_comments=='Y'" [data]="data" [survey_id]="org_id" [section_id]="'120'" (close)="closeAll()"></app-section-comments>
   <app-section-documents *ngIf="show_documents=='Y'" [data]="data"  [survey_id]="org_id" [section_id]="'120'" (close)="closeAll()"></app-section-documents>
   <app-section-photos *ngIf="show_photos=='Y'" [data]="data" [survey_id]="org_id" [section_id]="'120'" (close)="closeAll()"></app-section-photos>
- <!-- <app-section-saa *ngIf="show_saa=='Y'" [data]="data" [survey_id]="org_id" [section_id]="'120'" (close)="closeAll()"></app-section-saa> -->
+  <app-section-saa *ngIf="show_saa=='Y'" [data]="data" [survey_id]="org_id" [section_id]="'120'" (close)="closeAll()"></app-section-saa> 
+  <app-section-background [data]="data" [survey_id]="org_id" [section_id]="'120'" (close)="closeAll()"></app-section-background>
   <app-section-panel  *ngIf="show_comments!='Y'&&show_documents!='Y'&&show_photos!='Y'&&show_saa!='Y'"  [survey_id]="org_id" [section_id]="'120'"></app-section-panel>
 </div>

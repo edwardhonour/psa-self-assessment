@@ -35,6 +35,7 @@ import { SecurityForceStaffingComponent } from 'src/app/sections/security-force-
 import { SecurityResponsePlaningComponent } from 'src/app/sections/security-response-planing/security-response-planing.component';
 import { StudentPopulationComponent } from 'src/app/sections/student-population/student-population.component';
 import { StudentTransportationComponent } from 'src/app/sections/student-transportation/student-transportation.component';
+import { SectionTemplateComponent } from 'src/app/sections/section-template/section-template.component';
 
 
 @Component({
@@ -46,7 +47,7 @@ import { StudentTransportationComponent } from 'src/app/sections/student-transpo
     BuildingEnvelopeComponent, CyberSecurityComponent, ElectronicSecuritySystemsComponent, 
     EmergencyResponseComponent, EntryControlsComponent, GeneralDescriptionComponent, 
     IncidentHistoryComponent, LikelyThreatsComponent, OutdoorAreasComponent, PerimeterSecurityComponent,
-    SecurityForceStaffingComponent, SecurityResponsePlaningComponent, StudentPopulationComponent, StudentTransportationComponent,
+    SecurityForceStaffingComponent, SecurityResponsePlaningComponent, StudentPopulationComponent, StudentTransportationComponent, SectionTemplateComponent,
     AddDocumentFormComponent, SitebarWrapperComponent],
   templateUrl: './survey.component.html',
   styleUrls: ['./survey.component.css']

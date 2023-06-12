@@ -63,7 +63,10 @@ console.log(this.data)
     this._dataService.postForm("post-saa-option-change", this.data.saaFormData).subscribe((data:any)=>{
       this.data=data;
      });
-  }
+    }
+    doReload() {
+      location.reload();
+    }
 
   postForm() {
 //    let formData: any = {
