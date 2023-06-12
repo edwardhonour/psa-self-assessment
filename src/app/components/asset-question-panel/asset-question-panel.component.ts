@@ -13,11 +13,13 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MaterialModule } from 'src/app/material/material.module';
 import { UploadOptionCommentsComponent } from '../upload-option-comments/upload-option-comments.component';
 import { UploadOptionPhotoComponent } from '../upload-option-photo/upload-option-photo.component';
+import { UploadDocumentComponent } from '../upload-document/upload-document.component';
+import { UploadOptionDocumentComponent } from '../upload-option-document/upload-option-document.component';
 
 @Component({
   selector: 'app-asset-question-panel',
   standalone: true,
-  imports: [ CommonModule, MaterialModule, MatRadioModule, FormsModule, UploadOptionCommentsComponent, UploadOptionPhotoComponent],
+  imports: [ CommonModule, MaterialModule, MatRadioModule, FormsModule, UploadOptionCommentsComponent, UploadOptionPhotoComponent, UploadDocumentComponent, UploadOptionDocumentComponent],
   templateUrl: './asset-question-panel.component.html',
   styleUrls: ['./asset-question-panel.component.css']
 })
@@ -33,7 +35,7 @@ export class AssetQuestionPanelComponent implements OnChanges, OnInit {
   primary_value: any;
   showingphotos: any = 'N';
   showingcomments: any = 'N';
-
+  showingdocuments: any = 'N';
 
   ngOnInit(): void {
     this.level++;
@@ -59,6 +61,13 @@ hideComments() {
   this.showingcomments='N';
 }
 
+showDocuments() {
+  this.showingdocuments='Y';
+  }
+
+hideDocuments() {
+  this.showingdocuments='N';
+}
 
   constructor(private _dataService: DataService) {}
 

@@ -1,11 +1,22 @@
 <div class="container-fluid">
+    Question Panel
     <!-- Radio Group: All Options provide a single value into parent -->
     <mat-card *ngIf="data?.question.option_type=='Radio Group'" style="margin-bottom: 20px;">
         <div class="row">
             <div class="col-12 p-1" style="text-align: right;">
-                <button (click)="showComments()" *ngIf="data.question.allow_comment=='Y'&&data.comments.length==0"  class="btn btn-primary" style="margin-left:20px;"><i class="bi bi-chat-square-text"></i></button>
-                <button (click)="showComments()" *ngIf="data.question.allow_comment=='Y'&&data.comments.length!=0"  class="btn btn-success" style="margin-left:20px;"><i class="bi bi-chat-square-text"></i></button>
-                <button (click)="showPhotos()" *ngIf="data.question.allow_photo=='Y'&&showingphotos=='N'" class="btn btn-primary" style="margin-left:20px; margin-right:20px;"><i class="bi bi-camera"></i></button>
+               <table>
+                    <tr>
+<td style="width:40px;">
+    <span *ngIf="data.question.allow_comment=='N'">&nbsp; 1</span>
+    <button (click)="showComments()" *ngIf="data.question.allow_comment=='Y'&&data.comments.length==0"  class="btn btn-primary" style="margin-left:20px;"><i class="bi bi-chat-square-text"></i></button>
+    <button (click)="showComments()" *ngIf="data.question.allow_comment=='Y'&&data.comments.length!=0"  class="btn btn-success" style="margin-left:20px;"><i class="bi bi-chat-square-text"></i></button>
+</td>
+<td style="width:40px;">
+    <span *ngIf="data.question.allow_photo=='N'">&nbsp; 2</span>    
+    <button (click)="showPhotos()" *ngIf="data.question.allow_photo=='Y'&&showingphotos=='N'" class="btn btn-primary" style="margin-left:20px; margin-right:20px;"><i class="bi bi-camera"></i></button>    
+</td>
+                    </tr>
+               </table> 
             </div>
         </div>
         <app-upload-option-photo (close)="hidePhotos()" *ngIf="showingphotos=='Y'" [survey_id]="survey_id" [section_id]="data.question.section_id" [option_id]="data.question.id" [asset_id]="data.question.asset_id" [data]="data"></app-upload-option-photo>
@@ -28,9 +39,19 @@
     <mat-card *ngIf="data?.question.option_type=='Checkbox Group'"  style="margin-bottom: 20px;">
         <div class="row">
             <div class="col-12 p-1" style="text-align: right;">
-                <button (click)="showComments()" *ngIf="data.question.allow_comment=='Y'&&data.comments.length==0"  class="btn btn-primary" style="margin-left:20px;"><i class="bi bi-chat-square-text"></i></button>
-                <button (click)="showComments()" *ngIf="data.question.allow_comment=='Y'&&data.comments.length!=0"  class="btn btn-success" style="margin-left:20px;"><i class="bi bi-chat-square-text"></i></button>
-                <button (click)="showPhotos()" *ngIf="data.question.allow_photo=='Y'&&showingphotos=='N'" class="btn btn-primary" style="margin-left:20px; margin-right:20px;"><i class="bi bi-camera"></i></button>
+               <table>
+                    <tr>
+<td style="width:40px;">
+    <span *ngIf="data.question.allow_comment=='N'">&nbsp; </span>
+    <button (click)="showComments()" *ngIf="data.question.allow_comment=='Y'&&data.comments.length==0"  class="btn btn-primary" style="margin-left:20px;"><i class="bi bi-chat-square-text"></i></button>
+    <button (click)="showComments()" *ngIf="data.question.allow_comment=='Y'&&data.comments.length!=0"  class="btn btn-success" style="margin-left:20px;"><i class="bi bi-chat-square-text"></i></button>
+</td>
+<td style="width:40px;">
+    <span *ngIf="data.question.allow_photo=='N'">&nbsp; </span>    
+    <button (click)="showPhotos()" *ngIf="data.question.allow_photo=='Y'&&showingphotos=='N'" class="btn btn-primary" style="margin-left:20px; margin-right:20px;"><i class="bi bi-camera"></i></button>    
+</td>
+                    </tr>
+               </table> 
             </div>
         </div>
         <app-upload-option-photo (close)="hidePhotos()" *ngIf="showingphotos=='Y'" [survey_id]="survey_id" [section_id]="data.question.section_id" [option_id]="data.question.id" [asset_id]="data.question.asset_id" [data]="data"></app-upload-option-photo>

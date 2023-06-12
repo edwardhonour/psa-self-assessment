@@ -20,34 +20,19 @@ import { SqlUploadComponent } from 'src/app/components/sql-upload/sql-upload.com
 import { SmartUploadComponent } from 'src/app/components/smart-upload/smart-upload.component';
 import { SitebarWrapperComponent } from 'src/app/template/sitebar-wrapper/sitebar-wrapper.component';
 import { SectionPanelComponent } from 'src/app/components/section-panel/section-panel.component';
-import { ApproachParkingComponent } from 'src/app/sections/approach-parking/approach-parking.component';
-import { BuildingEnvelopeComponent } from 'src/app/sections/building-envelope/building-envelope.component';
-import { CyberSecurityComponent } from 'src/app/sections/cyber-security/cyber-security.component';
-import { ElectronicSecuritySystemsComponent } from 'src/app/sections/electronic-security-systems/electronic-security-systems.component';
-import { EmergencyResponseComponent } from 'src/app/sections/emergency-response/emergency-response.component';
-import { EntryControlsComponent } from 'src/app/sections/entry-controls/entry-controls.component';
 import { GeneralDescriptionComponent } from 'src/app/sections/general-description/general-description.component';
-import { IncidentHistoryComponent } from 'src/app/sections/incident-history/incident-history.component';
-import { LikelyThreatsComponent } from 'src/app/sections/likely-threats/likely-threats.component';
-import { OutdoorAreasComponent } from 'src/app/sections/outdoor-areas/outdoor-areas.component';
-import { PerimeterSecurityComponent } from 'src/app/sections/perimeter-security/perimeter-security.component';
-import { SecurityForceStaffingComponent } from 'src/app/sections/security-force-staffing/security-force-staffing.component';
-import { SecurityResponsePlaningComponent } from 'src/app/sections/security-response-planing/security-response-planing.component';
 import { StudentPopulationComponent } from 'src/app/sections/student-population/student-population.component';
 import { SectionTemplateComponent } from 'src/app/sections/section-template/section-template.component';
 import { AssessmentMenuComponent } from 'src/app/sections/assessment-menu/assessment-menu.component';
-
 
 @Component({
   selector: 'app-survey',
   standalone: true,
   imports: [CommonModule, Ng2SearchPipeModule, MatRadioModule, NgxTablePaginationModule, RouterModule, 
     FormsModule, SqlUploadComponent, SmartUploadComponent, SectionPanelComponent,
-    SqlComponentsModule, SqlMenuComponent, FileUploadModule, HttpClientModule, ApproachParkingComponent, 
-    BuildingEnvelopeComponent, CyberSecurityComponent, ElectronicSecuritySystemsComponent, 
-    EmergencyResponseComponent, EntryControlsComponent, GeneralDescriptionComponent, AssessmentMenuComponent,
-    IncidentHistoryComponent, LikelyThreatsComponent, OutdoorAreasComponent, PerimeterSecurityComponent,
-    SecurityForceStaffingComponent, SecurityResponsePlaningComponent, StudentPopulationComponent, SectionTemplateComponent,
+    SqlComponentsModule, SqlMenuComponent, FileUploadModule, HttpClientModule, 
+    GeneralDescriptionComponent, AssessmentMenuComponent,
+    StudentPopulationComponent, SectionTemplateComponent,
     AddDocumentFormComponent, SitebarWrapperComponent],
   templateUrl: './survey.component.html',
   styleUrls: ['./survey.component.css']

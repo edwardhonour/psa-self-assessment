@@ -14,10 +14,11 @@ import { MaterialModule } from 'src/app/material/material.module';
 import { UploadOptionPhotoComponent } from '../upload-option-photo/upload-option-photo.component';
 import { SectionCommentsComponent } from 'src/app/sections/section-comments/section-comments.component';
 import { UploadOptionCommentsComponent } from '../upload-option-comments/upload-option-comments.component';
+import { UploadOptionDocumentComponent } from '../upload-option-document/upload-option-document.component';
 @Component({
   selector: 'app-question-panel',
   standalone: true,
-  imports: [ CommonModule, MaterialModule, MatRadioModule, FormsModule, UploadOptionPhotoComponent, SectionCommentsComponent, UploadOptionCommentsComponent],
+  imports: [ CommonModule, MaterialModule, MatRadioModule, FormsModule, UploadOptionPhotoComponent, SectionCommentsComponent, UploadOptionCommentsComponent, UploadOptionDocumentComponent],
   templateUrl: './question-panel.component.html',
   styleUrls: ['./question-panel.component.css']
 })
