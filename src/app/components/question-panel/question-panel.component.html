@@ -1,5 +1,4 @@
 <div class="container-fluid">
-    Question Panel
     <!-- Radio Group: All Options provide a single value into parent -->
     <mat-card *ngIf="data?.question.option_type=='Radio Group'" style="margin-bottom: 20px;">
         <div class="row">
@@ -7,12 +6,12 @@
                <table>
                     <tr>
 <td style="width:40px;">
-    <span *ngIf="data.question.allow_comment=='N'">&nbsp; 1</span>
+    <span *ngIf="data.question.allow_comment=='N'">&nbsp; </span>
     <button (click)="showComments()" *ngIf="data.question.allow_comment=='Y'&&data.comments.length==0"  class="btn btn-primary" style="margin-left:20px;"><i class="bi bi-chat-square-text"></i></button>
     <button (click)="showComments()" *ngIf="data.question.allow_comment=='Y'&&data.comments.length!=0"  class="btn btn-success" style="margin-left:20px;"><i class="bi bi-chat-square-text"></i></button>
 </td>
 <td style="width:40px;">
-    <span *ngIf="data.question.allow_photo=='N'">&nbsp; 2</span>    
+    <span *ngIf="data.question.allow_photo=='N'">&nbsp; </span>    
     <button (click)="showPhotos()" *ngIf="data.question.allow_photo=='Y'&&showingphotos=='N'" class="btn btn-primary" style="margin-left:20px; margin-right:20px;"><i class="bi bi-camera"></i></button>    
 </td>
                     </tr>
