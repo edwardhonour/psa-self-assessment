@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SectionPanelComponent } from 'src/app/components/section-panel/section-panel.component';
 import { Observable } from 'rxjs';
@@ -18,7 +18,7 @@ import { SectionBackgroundComponent } from 'src/app/components/section-backgroun
   templateUrl: './section-template.component.html',
   styleUrls: ['./section-template.component.css']
 })
-export class SectionTemplateComponent implements OnInit {
+export class SectionTemplateComponent implements OnInit, OnChanges {
 
   @Input() org_id: any='0';
   @Input() section_id: any='50';
@@ -29,11 +29,17 @@ export class SectionTemplateComponent implements OnInit {
   @Input() include_saa: any = 'Y';
   @Input() include_background: any = 'Y';
 
+
   data: any;
   show_photos: any='N';
   show_documents: any='N';
   show_comments: any='N';
   show_saa: any='N';
+  show_report: any = 'N'
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('section template changes')
+  }
 
   parameters: any = {
     survey_id: '',
@@ -62,6 +68,18 @@ export class SectionTemplateComponent implements OnInit {
     }
   }
 
+  toggleReport() {
+    if (this.show_report=='Y') {
+      this.show_report='N';
+    } else {
+      this.show_photos='N';
+      this.show_comments='N';
+      this.show_documents='N';
+      this.show_report='Y';
+      this.show_saa='N';
+    }
+  }
+
   toggleDocuments() {
     if (this.show_documents=='Y') {
       this.show_documents='N';
@@ -78,6 +96,7 @@ export class SectionTemplateComponent implements OnInit {
     this.show_comments='N';
     this.show_documents='N';
     this.show_saa='N';
+    this.show_report='N';
   }
 
   toggleSaa() {
@@ -98,10 +117,13 @@ export class SectionTemplateComponent implements OnInit {
   }
 
   ngOnInit(): void {    
+        console.log('Section Template Fires')
         setTimeout(() => {
                   this.parameters.survey_id=this.org_id;
                   this.parameters.section_id=this.section_id;
                   this._dataService.postForm("get-survey-section-background-new", this.parameters).subscribe((data:any)=>{
+                    console.log('Section Template Fires')
+                    console.log(data)
                     this.data=data;
                   });
         }, 100);

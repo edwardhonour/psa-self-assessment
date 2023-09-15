@@ -16,13 +16,17 @@
         </div>
     </div>
     <div class="row">
-      <div class="col-12 p-2" style="background-color: lightgray;">
+      <div class="col-9 p-2" style="background-color: lightgray;">
             <button *ngIf="include_photos=='Y'" (click)="togglePhotos()" class="btn btn-primary">Photos ({{ data?.data.photos.length }})</button>
             <button *ngIf="include_documents=='Y'" (click)="toggleDocuments()" style="margin-left: 20px;" class="btn btn-primary">Documents ({{ data?.data.documents.length }})</button>
             <button *ngIf="include_comments=='Y'" (click)="toggleComments()" style="margin-left: 20px;" class="btn btn-primary">Comments ({{ data?.data.comments.length }})</button>            
             <button *ngIf="include_saa=='Y'" (click)="toggleSaa()" style="margin-left: 20px;" class="btn btn-primary">Critical Areas ({{ data?.data.saa.length }})</button>   
       </div>
+      <div class="col-3 p-2" style="background-color: lightgray; text-align: right;">    
+        <button (click)="toggleReport()" style="margin-left: 20px;" class="btn btn-success">View Report Section</button>   
+  </div>      
   </div>
+    <app-section-comments *ngIf="show_report=='Y'" [data]="data?.data" [survey_id]="org_id" [section_id]="section_id" (close)="closeAll()"></app-section-comments>
     <app-section-comments *ngIf="show_comments=='Y'" [data]="data?.data" [survey_id]="org_id" [section_id]="section_id" (close)="closeAll()"></app-section-comments>
     <app-section-documents *ngIf="show_documents=='Y'" [data]="data?.data"  [survey_id]="org_id" [section_id]="section_id" (close)="closeAll()"></app-section-documents>
     <app-section-photos *ngIf="show_photos=='Y'" [data]="data?.data" [survey_id]="org_id" [section_id]="section_id" (close)="closeAll()"></app-section-photos>
@@ -30,3 +34,4 @@
     <app-section-background *ngIf="include_background=='Y'" [data]="data?.data" [survey_id]="org_id" [section_id]="section_id" (close)="closeAll()"></app-section-background>
     <app-section-panel  *ngIf="show_comments!='Y'&&show_documents!='Y'&&show_photos!='Y'&&show_saa!='Y'" [survey_id]="org_id" [section_id]="section_id"></app-section-panel>
 </div>
+<span style="font-size:10px;">app/sections/section-template</span>

@@ -51,7 +51,10 @@ export class QuestionPanelComponent implements OnChanges, OnInit {
     }
     console.log(formData);
     this._dataService.postForm("get-survey-question", formData).subscribe((data:any)=>{
+      console.log('postForm')
+      console.log(data)
       this.data=data;
+      this.data.question.allow_comment = 'Y'
      });
   }
 

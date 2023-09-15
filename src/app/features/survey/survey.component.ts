@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit, Output, EventEmitter, HostBindingDecorator, HostListener, HostBinding } from '@angular/core';
+import { Component, OnDestroy, OnInit, Output, EventEmitter, HostBindingDecorator, HostListener, HostBinding, OnChanges, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { FormsModule,  FormGroup, FormControl, Validators } from '@angular/forms';
@@ -37,7 +37,7 @@ import { AssessmentMenuComponent } from 'src/app/sections/assessment-menu/assess
   templateUrl: './survey.component.html',
   styleUrls: ['./survey.component.css']
 })
-export class SurveyComponent  {
+export class SurveyComponent implements OnChanges {
 
   @Output() onFileDropped = new EventEmitter<any>();
 
@@ -72,6 +72,9 @@ export class SurveyComponent  {
   data: any; 
 
 
+ngOnChanges(changes: SimpleChanges): void {
+  console.log('Survey Changes')
+}
 
   uploading: any = 'N';
   adding: any = 'N';
@@ -135,6 +138,9 @@ export class SurveyComponent  {
           this._activatedRoute.data.subscribe(({ 
             data, menudata, userdata })=> { 
             this.data=data;
+            console.log('ngOnInit')
+            console.log(this.data)
+            console.log('in survey')
             this.general='N'; 
             this.population='N'; 
             this.transportation='N'; 

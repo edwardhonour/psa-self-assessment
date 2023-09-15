@@ -30,6 +30,7 @@ export class AssetSectionPanelComponent implements OnChanges, OnInit{
   @Input() data: any;
   showing: any = 'N';
   newsaa: any = 'N';
+  show_report: any = 'N';
 
   ngOnChanges() {
 
@@ -54,6 +55,10 @@ export class AssetSectionPanelComponent implements OnChanges, OnInit{
   showNew() {
      this.newsaa='Y';
   }
+
+  showReport() {
+    this.show_report='Y';
+ }
 
   hideNew() {
     this.newsaa='N';

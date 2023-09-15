@@ -14,13 +14,13 @@ export class ForcedLogoutComponent implements OnInit {
 
   ngOnInit(): void {
     setTimeout(() => {
-      location.replace("/#/sign-in")
+    //  location.replace("/#/sign-in")
     }, 500);
   }
   
   redirect() {
 //    location.replace("https://mynuaxess.com/#/sign-in")
-      location.replace("/#/sign-in")
+  //    location.replace("/#/sign-in")
   }
 
 }

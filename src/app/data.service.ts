@@ -15,11 +15,14 @@ export class DataService {
   t: any;
   uid: any;
   url: any;
+  fastapi_url: any;
   un: any;
   role: any;
 
   constructor(private http: HttpClient) { 
-        this.url='https://protectivesecurity.org/api/psp_router.php';
+      this.url='https://protectivesecurity.org/api/psp_router.php';
+      this.fastapi_url='https://protectivesecurity.org/fastapi/'
+      this.fastapi_url='http://localhost:8000/'
     }
 
   getLocalStorage() {
@@ -41,6 +44,7 @@ export class DataService {
     } else {
       this.role=localStorage.getItem('role')
     }
+    this.uid = 572
   }
 
   getData(path: any, id: any, id2: any, id3: any) {
@@ -86,6 +90,19 @@ export class DataService {
     }
 
   this.t= this.http.post(this.url, data);
+  return this.t;
+
+  }
+
+  postFastapi(formID: any, formData: any[]) {
+    this.getLocalStorage();
+    const data = {
+      "q" : formID,
+      "data": formData,
+      "uid": this.uid
+    }
+
+  this.t= this.http.post(this.fastapi_url, data);
   return this.t;
 
   }

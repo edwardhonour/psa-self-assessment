@@ -57,10 +57,10 @@ export class AdminDashboardComponent implements OnInit, OnDestroy
 //              this.navigation=menudata
               this.user=userdata
               this.uploading='N'
-              if (this.data.user.force_logout>0) {
-                  localStorage.removeItem('uid');
-                  this._router.navigate(['/forced-off',this.data.user.force_logout]);
-              }
+//              if (this.data.user.force_logout>0) {
+//                  localStorage.removeItem('uid');
+//                  this._router.navigate(['/forced-off',this.data.user.force_logout]);
+//              }
             }) 
     }
 

@@ -51,7 +51,7 @@ export class AdminHomeComponent implements OnInit, OnDestroy
     {      
       let d = { name: 'home', link: '/', count: 0, isSmall: 'N', hideNav: 'N', hideHeader: 'N'};
       this._dataService.locationSubject.next(d);
-
+alert('H')
             this._activatedRoute.data.subscribe(({ 
               data, menudata, userdata })=> { 
               this.data=data;
@@ -59,8 +59,8 @@ export class AdminHomeComponent implements OnInit, OnDestroy
               this.user=userdata
               this.uploading='N'
               if (this.data.user.force_logout>0) {
-                  localStorage.removeItem('uid');
-                  this._router.navigate(['/forced-off',this.data.user.force_logout]);
+//                  localStorage.removeItem('uid');
+//                  this._router.navigate(['/forced-off',this.data.user.force_logout]);
               }
             }) 
     }

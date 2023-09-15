@@ -63,7 +63,7 @@ export class SectionPanelComponent implements OnChanges, OnInit{
       survey_id: this.survey_id,
       section_id: this.section_id
     }
-    this._dataService.postForm("get-survey-section", formData).subscribe((data:any)=>{
+    this._dataService.postFastapi("get-survey-section", formData).subscribe((data:any)=>{
       this.data=data;
       console.log(data);
      });

@@ -9,11 +9,182 @@
     <div class="card">
 <div *ngIf="newsaa=='N'" class="row">
     <div (click)="showNew()" class="col-12" style="text-align: right;"><button class="btn btn-light">Add Another Area of This Type</button></div>
+    <div (click)="showReport()" class="col-12" style="text-align: right;"><button class="btn btn-success">Show Report Section</button></div>
 </div>
 <div *ngIf="newsaa=='Y'" class="row">
     <div class="col-12">
         <app-add-saa-form (close)="hideNew()" [data]="data" [saa_type]="data.saa_type"></app-add-saa-form>
     </div>
 </div>
+<div *ngIf="show_report=='Y'" class="row">
+    <div class="col-12 p-3">
+        <div class="card">
+<div *ngIf="asset_id=='280' "class="card-body">
+        <p>
+            <b>**Bus Dropoff Area Safety Assessment Summary:**</b>
+        </p>
+<p>
+    The bus dropoff area at the school has been reviewed with several key findings:
+</p>
+<p>
+    1. <b>**Clear Markings:**</b> The bus dropoff area is clearly marked, ensuring that it is easily identifiable for both drivers and pedestrians.
+</p>
+<p>
+    2. <b>**Unauthorized Vehicle</b> Prevention:** Unauthorized vehicles are effectively prevented from entering the bus dropoff area, enhancing safety during student arrivals and departures.
+</p>
+<p>
+    3. <b>**Lack of Vehicle Barriers:**</b> Notably, there are no physical barriers in place to further deter unauthorized vehicles from entering the bus dropoff area, potentially posing a security concern.
+</p>
+<p>
+    4. <b>**Absence of Staff Assistance:**</b> There is no staff presence observed to assist students as they arrive at the bus dropoff area, which may impact student safety and organization during this critical time.
+</p>
+<p>
+    5. <b>**Student Channeling:**</b> Students are not immediately guided or channeled to authorized areas or entrances upon their arrival, potentially leading to congestion and safety concerns.
+</p>
+<p>
+    6. <b>**Proximity to Building:**</b> The distance between the building and the student dropoff area is less than 70 feet, indicating a relatively close proximity that may facilitate efficient access to the school.
+</p>
+<p>
+    7. <b>**Video Surveillance:**</b> The bus dropoff area is equipped with a video surveillance system, which is a valuable security asset.
+</p>
+<p>
+    8. <b>**Coverage Percentage:**</b> The video surveillance system covers more than 75% but less than 100% of the bus dropoff area, leaving some areas potentially unmonitored.
+</p>
+<p>
+    9. <b>**Monitoring During School Hours:**</b> Importantly, the video surveillance system is actively monitored during normal school hours, contributing to overall security.
+</p>
+<p>
+    10. <b>**Concealment Areas:**</b> One or more areas of concealment exist between the bus dropoff point and the building entrance, which should be assessed further for potential security vulnerabilities.
+</p>
+<p>
+    In conclusion, while the bus dropoff area benefits from clear markings and effective prevention of unauthorized vehicles, there are notable areas for improvement, including the lack of physical barriers, the absence of staff assistance, and the presence of concealment areas. Additionally, further evaluation of the video surveillance system's coverage may be necessary to enhance overall safety in this critical area.
+</p>
+    
+</div>
+
+<div *ngIf="asset_id=='154' "class="card-body">
+
+    **Non-Student Parking Lot Safety Assessment Summary:**
+
+    The evaluation of the non-student parking lot at the school reveals the following key findings:
+    
+    1. **Student Parking Policy:** The school strictly enforces a policy prohibiting students from parking in the non-student parking lot, which helps maintain order and security in this area.
+    
+    2. **Vehicle Registration:** Notably, the school does not require all vehicles in the non-student parking lot to be registered with the school. This could potentially pose a security concern as unregistered vehicles might enter the premises.
+    
+    3. **Effective Vehicle Barriers:** Vehicle barriers are in place to prevent unauthorized access to the non-student parking lot, enhancing security by restricting entry to authorized individuals only.
+    
+    4. **Distance from School:** The non-student parking lot is located at a distance of over 400 feet from the school building, which may pose logistical challenges for students and staff accessing the lot.
+    
+    5. **Lack of Video Surveillance:** One significant security gap is the absence of a video surveillance system covering the non-student parking lot, potentially limiting the school's ability to monitor activities in this area and respond to security incidents.
+    
+    6. **Concealment Areas:** There are areas of concealment between the non-student parking lot and the building entrance, which should be carefully assessed for potential security vulnerabilities.
+    
+    In summary, the non-student parking lot at the school is subject to a strict student parking policy and features effective vehicle barriers to deter unauthorized access. However, concerns arise due to the absence of a requirement for vehicle registration, the significant distance from the school building, the lack of video surveillance coverage, and the presence of concealment areas. It is recommended that the school considers implementing measures to address these security gaps and enhance the overall safety of the non-student parking lot.
+    
+
+</div>
+
+<div *ngIf="asset_id=='152' "class="card-body">
+
+<b>**Student Automobile Dropoff Area Safety Assessment Summary:**</b>
+<p>
+    The assessment of the student automobile dropoff area at the school has yielded the following key findings:
+</p>
+<p>
+1. <b>**Clear Markings:**</b> The automobile dropoff area is appropriately marked, ensuring clear identification for both drivers and pedestrians.
+</p>
+<p>
+2. <b>**Unauthorized Vehicle Prevention:**</b> Unauthorized vehicles are effectively prevented from entering the dropoff area, contributing to a secure environment during student arrivals and departures.
+</p>
+<p>
+3. <b>**Lack of Vehicle Barriers:**</b> Notably, there are no physical vehicle barriers in place to prevent access to the dropoff area, which may warrant consideration for enhanced security measures.
+</p>
+<p>
+    <b>4. **Driver Identification:**</b> Driver identification is not required to drop off students, potentially allowing for unvetted access to the school premises.
+</p>
+<p>
+5. <b>**Efficient Student Channeling:**</b> Students are efficiently channeled from the dropoff area into the building upon arrival, minimizing congestion and promoting safety.
+</p>
+<p>
+6. <b>**Proximity to Building:** </b>b>The dropoff area is conveniently located within less than 70 feet of the school building, facilitating quick and safe access for students.
+</p>
+<p>
+7. <b>**Comprehensive Video Surveillance:**</b> The dropoff area is equipped with a video surveillance system that monitors 100% of the student dropoff area, providing robust security coverage.
+</p>
+<p>
+8. <b>**Limited Monitoring Hours:**</b> It is important to note that the video surveillance system is only monitored during student dropoff and pickup times, potentially leaving security gaps during other periods.
+</p>
+<p>
+9. <b>**Absence of Concealment Areas:**</b> There are no identified areas of concealment between the student dropoff area and the building entrance, contributing to overall safety.
+</p>
+<p>
+In summary, the student automobile dropoff area exhibits several positive attributes, including clear markings, effective prevention of unauthorized vehicles, and efficient student channeling. However, the absence of vehicle barriers, driver identification requirements, and limited monitoring hours for the video surveillance system are areas of concern that warrant further evaluation and potential improvements to enhance overall safety and security.
+</p>
+<p>
+<b>**Recommendations for School Safety Improvement:**</b>
+</p>
+<p>
+1. <b>**Implement Vehicle Barriers:**</b> Install physical vehicle barriers in the student automobile dropoff area to enhance security by preventing unauthorized access.
+</p>
+<p>
+2. <b>**Driver Identification System:**</b> Implement a driver identification system to verify the identity of individuals dropping off students, ensuring that only authorized persons have access to the premises.
+</p>
+<p>
+3. <b>**Extend Video Surveillance Monitoring:**</b> Extend the monitoring hours of the video surveillance system to provide continuous coverage throughout the school day, not just during student dropoff and pickup times.
+</p>
+<p>
+4. <b>**Review Vehicle Registration Policy:**</b> Consider implementing a policy requiring all vehicles, including those in the non-student parking lot, to be registered with the school to enhance control and monitoring of vehicles on campus.
+</p>
+<p>
+5. <b>**Enhanced Lighting:**</b> Ensure adequate lighting in the student dropoff area to improve visibility and security during low-light conditions.
+</p>
+<p>
+6. <b>**Security Patrols:**</b> Implement periodic security patrols in the student dropoff area to deter unauthorized individuals and ensure a safe environment.
+</p>
+<p>
+7. <b>**Student Education:**</b> Educate students and parents about dropoff and pickup procedures, emphasizing safety, and efficient traffic flow to minimize congestion.
+</p>
+<p>
+8. <b>**Emergency Response Plan:**</b> Develop and communicate an emergency response plan for the student dropoff area to ensure a coordinated and efficient response in case of emergencies.
+</p>
+<p>
+9. <b>**Regular Security Assessments:**</b> Conduct regular security assessments to identify and address potential vulnerabilities, including the presence of concealment areas.
+</p>
+<p>
+10. <b>**Public Awareness Campaign:**|</b> Launch a public awareness campaign to inform parents and students about the importance of following safety protocols in the dropoff area.
+</p>
+<p>
+11. <b>**Communication Channels:**</b> Establish clear communication channels between school staff, security personnel, and parents to address safety concerns promptly.
+</p>
+<p>
+12. <b>**Evaluate Parking Lot Security:**</b> Review the security measures in the non-student parking lot, considering the potential need for registration requirements and enhanced surveillance.
+</p>
+<p>
+By implementing these recommendations, the school can proactively address security concerns, enhance safety protocols, and create a secure environment for students, staff, and visitors. Regular assessments and ongoing vigilance will be key to maintaining a safe and welcoming school campus.
+</p>
+</div>
+<div *ngIf="asset_id=='153' "class="card-body">
+    <p><b>Student Parking Lot Safety Assessment Summary:</b></p>
+    <p>
+    The evaluation of the student parking lot at the school has revealed several notable findings. Firstly, the student parking lot is reserved exclusively for students, eliminating the potential complications associated with sharing the lot with non-students. Additionally, the school effectively mandates that all student vehicles be registered with the institution, a vital step toward ensuring accountability and control over the parking area. However, it's essential to note that while registration is required, there is no requirement for students to prove their registration before parking in the student parking lot. This could potentially lead to unauthorized parking.
+    </p>
+    <p>
+    Furthermore, the presence of vehicle barriers in the student parking lot deters unauthorized access, which enhances security by limiting entry to authorized individuals only. Nevertheless, the student parking lot's considerable distance, spanning over 400 feet from the school building, may pose logistical challenges for students and staff accessing the lot. Moreover, a significant security gap is identified in the absence of a video surveillance system covering the student parking lot, potentially limiting the school's ability to monitor activities in this area and respond to security incidents.
+    </p>
+    <p>
+    In conclusion, while the student parking lot boasts several positive attributes, including exclusive student use, mandatory vehicle registration, and effective vehicle barriers, concerns arise regarding the lack of registration verification, the substantial distance from the school building, and the absence of video surveillance coverage. It is recommended that the school considers implementing measures to address these security gaps and enhance the overall safety of the student parking lot.
+    </p>
+</div>
+
+
+
+
+</div>
+
+
     </div>
 </div>
+    </div>
+</div>
+<span style="font-size:10px;">app/components/asset-section-panel</span>
